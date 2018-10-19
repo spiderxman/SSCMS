@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.masago.mapper.EmpInfoMapper">
+  <resultMap id="empBaseResultMap" type="com.masago.bean.EmpBaseBean">
+    <result column="EMP_ID" jdbcType="VARCHAR" property="empId" />
+    <result column="HIS_NO" jdbcType="INTEGER" property="hisNo" />
+    <result column="EMP_FIRST_NAME" jdbcType="VARCHAR" property="empFirstName" />
+    <result column="EMP_LAST_NAME" jdbcType="VARCHAR" property="empLastName" />
+    <result column="EMP_NAME_KANA" jdbcType="VARCHAR" property="empNameKana" />
+    <result column="EMP_NICK_NAME" jdbcType="VARCHAR" property="empNickName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="AUTHORITY" jdbcType="VARCHAR" property="authority" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="BIRTHDAY" jdbcType="VARCHAR" property="birthday" />
+	<result column="COUNTRY" jdbcType="VARCHAR" property="country" />
+	<result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+	<result column="STATION" jdbcType="VARCHAR" property="station" />
+	<result column="TEL" jdbcType="VARCHAR" property="tel" />
+	<result column="MAIL" jdbcType="VARCHAR" property="mail" />
+	<result column="SCHOOL" jdbcType="VARCHAR" property="school" />
+	<result column="EDUCATION" jdbcType="VARCHAR" property="education" />
+	<result column="MAJOR" jdbcType="VARCHAR" property="major" />
+	<result column="GRADUATE_DATE" jdbcType="VARCHAR" property="graduateDate" />
+	<result column="IMMIGRATION_STATUS" jdbcType="VARCHAR" property="immigrationStatus" />
+	<result column="LANGUAGE1" jdbcType="VARCHAR" property="language1" />
+	<result column="LEVEL1" jdbcType="VARCHAR" property="level1" />
+	<result column="LANGUAGE2" jdbcType="VARCHAR" property="language2" />
+	<result column="LEVEL2" jdbcType="VARCHAR" property="level2" />
+	<result column="CERTIFICATE" jdbcType="VARCHAR" property="certificate" />
+	<result column="EMPLOYEE_TYPE" jdbcType="VARCHAR" property="employeeType" />
+	<result column="POSITION" jdbcType="VARCHAR" property="position" />
+	<result column="WORKING_STATUS" jdbcType="VARCHAR" property="workingStatus" />
+	<result column="COMPANY_START_DATE" jdbcType="VARCHAR" property="companyStartDate" />
+	<result column="COMPANY_END_DATE" jdbcType="VARCHAR" property="companyEndDate" />
+	<result column="OFFICE_NAME" jdbcType="VARCHAR" property="officeName" />
+	<result column="OFFICE_ADDRESS" jdbcType="VARCHAR" property="officeAddress" />
+	<result column="OFFICE_START_DATE" jdbcType="VARCHAR" property="officeStartDate" />
+	<result column="OFFICE_END_DATE" jdbcType="VARCHAR" property="officeEndDate" />
+	<result column="DEL_FLG" jdbcType="VARCHAR" property="delFlg" />
+    <result column="CREATER" jdbcType="VARCHAR" property="creater" />
+    <result column="CREATE_DATE" jdbcType="DATE" property="createDate" />
+    <result column="UPDATER" jdbcType="VARCHAR" property="updater" />
+    <result column="UPDATE_DATE" jdbcType="DATE" property="updateDate" />
+  </resultMap>
+  <sql id="empBase_Select_Columns">
+      empBase.EMP_ID
+     ,empBase.HIS_NO
+     ,empBase.EMP_FIRST_NAME
+     ,empBase.EMP_LAST_NAME
+     ,empBase.EMP_NAME_KANA
+     ,empBase.EMP_NICK_NAME
+     ,empBase.PASSWORD
+     ,empBase.AUTHORITY
+     ,empBase.SEX
+     ,empBase.BIRTHDAY
+     ,empBase.COUNTRY
+     ,empBase.ADDRESS
+     ,empBase.STATION
+     ,empBase.TEL
+     ,empBase.MAIL
+     ,empBase.SCHOOL
+     ,empBase.EDUCATION
+     ,empBase.MAJOR
+     ,empBase.GRADUATE_DATE
+     ,empBase.IMMIGRATION_STATUS
+     ,empBase.LANGUAGE1
+     ,empBase.LEVEL1
+     ,empBase.LANGUAGE2
+     ,empBase.LEVEL2
+     ,empBase.CERTIFICATE
+     ,empBase.EMPLOYEE_TYPE
+     ,empBase.POSITION
+     ,empBase.WORKING_STATUS
+     ,empBase.COMPANY_START_DATE
+     ,empBase.COMPANY_END_DATE
+     ,empBase.OFFICE_NAME
+     ,empBase.OFFICE_ADDRESS
+     ,empBase.OFFICE_START_DATE
+     ,empBase.OFFICE_END_DATE
+     ,empBase.DEL_FLG
+     ,empBase.CREATER
+     ,empBase.CREATE_DATE
+     ,empBase.UPDATER
+     ,empBase.UPDATE_DATE
+  </sql>
+  <sql id="searchBy">
+  	<trim prefix="where" prefixOverrides="and|or">
+  		AND empBase.HIS_NO = (SELECT MAX(HIS_NO) FROM EMP_BASE WHERE EMP_BASE.EMP_ID = #{empId, jdbcType=VARCHAR} AND DEL_FLG='0' GROUP BY EMP_BASE.EMP_ID)
+  		<if test="empId != '' and empId != null">
+  			AND empBase.EMP_ID = #{empId, jdbcType=VARCHAR}
+  		</if>
+   		<if test="userName != '' and userName != null">
+   		    AND 1 = 1
+   		<!--
+  			AND user.user_name like CONCAT('%',#{userName, jdbcType=VARCHAR},'%')
+  			-->
+  		</if>
+
+  		<if test="authority != '' and authority != null">
+  			AND empBase.AUTHORITY = #{authority, jdbcType=VARCHAR}
+  		</if>
+   		<if test="delFlag != '' and delFlag != null">
+   		    AND 1 = 1
+<!--  		AND user.del_flg = #{delFlag, jdbcType=VARCHAR}
+-->
+  		</if>
+
+  	</trim>
+  </sql>
+  <select id="selectEmpInfo" resultMap="empBaseResultMap">
+  	select
+  	<include refid="empBase_Select_Columns"/>
+  	from EMP_BASE empBase
+  	<include refid="searchBy"/>
+  	order by empBase.EMP_ID asc
+  </select>
+  
+  <!-- 最大社員ID取得 Start-->
+  <sql id="maxEmpId_Columns">
+      MAX(empBase.EMP_ID)
+  </sql>
+  <sql id="maxEmpId_searchBy">
+  	<trim prefix="where" prefixOverrides="and|or">
+  		empBase.DEL_FLG = '0'
+  	</trim>
+  </sql>
+  <select id="selectMaxEmpId" resultType="java.lang.String">
+  	select
+  	<include refid="maxEmpId_Columns"/>
+  	from EMP_BASE empBase
+  	<include refid="maxEmpId_searchBy"/>
+  	order by empBase.EMP_ID asc
+  </select>
+  <!-- 最大社員ID取得 End-->
+
+  <!-- 社員基本情報作成 Start-->
+  <sql id="empBase_Insert_Columns">
+      EMP_ID
+     ,HIS_NO
+     ,EMP_FIRST_NAME
+     ,EMP_LAST_NAME
+     ,EMP_NAME_KANA
+     ,EMP_NICK_NAME
+     ,PASSWORD
+     ,AUTHORITY
+     ,SEX
+     ,BIRTHDAY
+     ,COUNTRY
+     ,ADDRESS
+     ,STATION
+     ,TEL
+     ,MAIL
+     ,SCHOOL
+     ,EDUCATION
+     ,MAJOR
+     ,GRADUATE_DATE
+     ,IMMIGRATION_STATUS
+     ,LANGUAGE1
+     ,LEVEL1
+     ,LANGUAGE2
+     ,LEVEL2
+     ,CERTIFICATE
+     ,EMPLOYEE_TYPE
+     ,POSITION
+     ,WORKING_STATUS
+     ,COMPANY_START_DATE
+     ,COMPANY_END_DATE
+     ,OFFICE_NAME
+     ,OFFICE_ADDRESS
+     ,OFFICE_START_DATE
+     ,OFFICE_END_DATE
+     ,DEL_FLG
+     ,CREATER
+     ,CREATE_DATE
+     ,UPDATER
+     ,UPDATE_DATE
+  </sql>
+  <insert id="insertEmpBase" parameterType="com.masago.bean.EmpBaseBean">
+	insert into EMP_BASE(
+	<include refid="empBase_Insert_Columns"/>
+	)
+	values(
+	 #{empBaseBean.empId}
+	,#{empBaseBean.hisNo}
+	,#{empBaseBean.empFirstName}
+	,#{empBaseBean.empLastName}
+	,#{empBaseBean.empNameKana}
+	,#{empBaseBean.empNickName}
+	,#{empBaseBean.password}
+	,#{empBaseBean.authority}
+	,#{empBaseBean.sex}
+	,#{empBaseBean.birthday}
+	,#{empBaseBean.country}
+	,#{empBaseBean.address}
+	,#{empBaseBean.station}
+	,#{empBaseBean.tel}
+	,#{empBaseBean.mail}
+	,#{empBaseBean.school}
+	,#{empBaseBean.education}
+	,#{empBaseBean.major}
+	,#{empBaseBean.graduateDate}
+	,#{empBaseBean.immigrationStatus}
+	,#{empBaseBean.language1}
+	,#{empBaseBean.level1}
+	,#{empBaseBean.language2}
+	,#{empBaseBean.level2}
+	,#{empBaseBean.certificate}
+	,#{empBaseBean.employeeType}
+	,#{empBaseBean.position}
+	,#{empBaseBean.workingStatus}
+	,#{empBaseBean.companyStartDate}
+	,#{empBaseBean.companyEndDate}
+	,#{empBaseBean.officeName}
+	,#{empBaseBean.officeAddress}
+	,#{empBaseBean.officeStartDate}
+	,#{empBaseBean.officeEndDate}
+	,#{empBaseBean.delFlg}
+	<!-- #{userInfo.createUser}, -->
+	,'tang'
+	,sysdate()
+	<!-- #{userInfo.updateUser}, -->
+	,'tang'
+	,sysdate()
+	)
+  </insert>
+</mapper>

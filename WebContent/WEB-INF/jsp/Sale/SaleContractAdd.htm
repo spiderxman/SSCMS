@@ -1,0 +1,362 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>販売契約登録 </TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<LINK rel=stylesheet type=text/css href="../CSS/Index.css">
+<LINK rel=stylesheet type=text/css href="../CSS/Style.css">
+
+</HEAD>
+<BODY onload=getTime(getTimeSub());>
+<FORM style="TEXT-ALIGN: center" id=userForm method=post
+    name=userForm action="useradd">
+<DIV style="WIDTH: 1158px; HEIGHT: 150px">
+
+
+<SCRIPT language=javascript type=text/javascript>
+    var timeClient = new Date();
+    function getTimeSub() {
+        var strTimeServer;
+        var timeServer;
+        if (document.getElementById('ctl00_hidTime') != null) {
+            strTimeServer = document.getElementById('ctl00_hidTime').value;
+            timeServer = new Date(strTimeServer);
+        }
+        var timeSub = Math.round((timeServer.getTime() - timeClient.getTime()) / 1000);
+        return timeSub;
+    }
+    function getTime(n) {
+        var clientTime = new Date();
+        clientTime.setTime(clientTime.getTime() + n * 1000);
+        var nowTime = clientTime.toLocaleDateString() + " " + clientTime.toLocaleTimeString();
+        if (document.getElementById('ctl00_lblTime') != null) {
+            document.getElementById('ctl00_lblTime').innerText = nowTime;
+        }
+        setTimeout("getTime(getTimeSub())", 1000);
+    }
+    function openHelpDoc() {
+        window.open('Help/List.htm', 'newwindow', 'width=800,height=700,scrollbars=yes,resizable=yes,location=yes');
+        return false;
+    }
+    function show(id){
+        document.getElementById(id).style.display='block';
+    }
+    function hide(id){
+        document.getElementById(id).style.display='none';
+    }
+
+</SCRIPT>
+<DIV style="TEXT-ALIGN: center">
+    <DIV style="BACKGROUND-IMAGE: url(../Image/bj.jpg); WIDTH: 1250px; BACKGROUND-REPEAT: repeat-x">
+        <DIV style="BACKGROUND-IMAGE: url(../Image/top.jpg); TEXT-ALIGN: left; MARGIN: auto; WIDTH: 92%; BACKGROUND-REPEAT: no-repeat; HEIGHT: 82px">
+            <DIV class=UserNotice>
+                <DIV style="WIDTH: 50%; FLOAT: left">
+                    <SPAN id=ctl00_lblUserID>ユーザー名：</SPAN><SPAN id=ctl00_lblUserName>
+                   
+                   Admin
+                   </SPAN> &nbsp; <SPAN id=ctl00_lblTime></SPAN>
+                </DIV>
+                <DIV style="WIDTH: 50%; FLOAT: left">
+                    <A id=ctl00_lnkHelp class=LogHelp onClick="return openHelpDoc();" href="javascript:__doPostBack('ctl00$lnkHelp','')">ヘルプ</A>
+                    <A id=ctl00_lnkReturn class=LogReturn href="../MainMenu.htm">メイン画面</A> 
+                    <A id=ctl00_lnkExit class=LogExsit href="../login.htm">ログアウト</A> 
+                </DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+    <div id="ddst" class="ddst">
+        <ul id="nav" style="BACKGROUND-IMAGE: url(../Image/001.jpg); PADDING-LEFT: 3%; WIDTH: 1250px; BACKGROUND-REPEAT: repeat-x">
+            <li onMouseOver="show('nav_1');" onMouseOut="hide('nav_1')" ><a href="#">販売契約</a>
+                <ul id="nav_1">
+                    <li><a href="SaleContractSearch.htm">販売契約検索</a></li>
+                </ul>
+            </li>
+            <li onMouseOver="show('nav_2');" onMouseOut="hide('nav_2')" ><a href="#">基本情報</a>
+                <ul id="nav_2">
+                    <li><a href="../User/UserSearch.htm">ユーザー検索</a></li>
+                </ul>
+            </li>
+            <li onMouseOver="show('nav_3');" onMouseOut="hide('nav_3')" ><a href="#">マスタ情報</a>
+                <ul id="nav_3">
+                    <li><a href="../Master/BankAdd.htm">銀行</a></li>
+                    <li><a href="../Master/StatusAdd.htm">ステータス</a></li>
+                    <li><a href="../Master/PaymentAdd.htm">支払方法</a></li>
+                    <li><a href="../Master/UnitAdd.htm">単位</a></li>
+                    <li><a href="../Master/PortAdd.htm">地点</a></li>
+                    <li><a href="../Master/CurrencyAdd.htm">通貨種別</a></li>
+                    <li><a href="../Master/TradeLanAdd.htm">貿易用語</a></li>
+                    <li><a href="../Master/RootAdd.htm">権限</a></li>
+                </ul>
+            </li>
+            <li class="yy"></li>
+        </ul>
+    </div>
+</DIV>
+</DIV>
+<DIV style="WIDTH: 1158px; HEIGHT: 30px">
+<DIV
+    style="BACKGROUND-IMAGE: url(../Image/006.jpg); TEXT-ALIGN: left; MARGIN-TOP: 20px; TEXT-INDENT: 20px; WIDTH: 65%; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 28px"><SPAN
+    id=ctl00_lbltitle class=title>販売契約登録</SPAN></DIV>
+<DIV
+    style="TEXT-ALIGN: left; MARGIN-TOP: 20px; WIDTH: 30%; FLOAT: right; HEIGHT: 50px">
+<DIV style="WIDTH: 354px" id=ctl00_panelMsg class=panelGrid>
+
+<FIELDSET><LEGEND>システム情報 </LEGEND>&nbsp; <SPAN
+    style="COLOR: red" id=ctl00_lblErrorMessage class=MsgStyle></SPAN></FIELDSET>
+</DIV>
+</DIV>
+</DIV>
+<DIV style="TEXT-ALIGN: left; WIDTH: 1158px">
+
+<DIV style="TEXT-ALIGN: right; WIDTH: 100%" class=btnContent>
+<a href="SaleContractUpdate.htm" class="btn"><center>登録</center></a>
+<a href="SaleContractList.htm" class="btn">
+<center>戻る</center>
+</a>
+</DIV>
+<DIV style="WIDTH: 100%" id=ctl00_mainContent_BaseInfo class=panelGrid>
+<FIELDSET><LEGEND>基本情報 </LEGEND>
+<TABLE style="WIDTH: 100%" cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD style="WIDTH: 170px"><SPAN id=ctl00_mainContent_lblContractNo 
+      class=labelBld>CONTRACT NO(契約番号)</SPAN><BR>
+      <INPUT style="WIDTH: 120px" 
+      id=ctl00_mainContent_txtContractNo class=textBoxReadOnly 
+      name=ctl00$mainContent$txtContractNo readOnly value=UN2014PI_0101> 
+    </TD>
+    <TD style="WIDTH: 170px"><SPAN id=ctl00_mainContent_lblCurrency 
+      class=labelBld>CURRENCY(通貨種別)</SPAN><BR>
+      <SELECT style="WIDTH: 120px" id=ctl00_mainContent_ddlCurrency name=ctl00$mainContent$ddlCurrency> 
+        <OPTION value=""></OPTION> 
+        <OPTION value=0001>RMB</OPTION> 
+        <OPTION  selected value=0002>USD</OPTION>
+       </SELECT> 
+     </TD>
+    <TD style="WIDTH: 170px"><SPAN id=ctl00_mainContent_lblUnitLength   class=labelBld>U_LENGTH(単位)</SPAN><BR>
+      <SELECT style="WIDTH: 120px" id=ctl00_mainContent_ddlUnitLength name=ctl00$mainContent$ddlUnitLength> 
+        <OPTION selected value=""></OPTION> 
+        <OPTION value=0001>MTS</OPTION> 
+        <OPTION value=0002>YDS</OPTION> 
+        <OPTION value=0003>PCS</OPTION> 
+        <OPTION  value=0004>GROSS</OPTION>
+      </SELECT> 
+    </TD>
+    <TD style="WIDTH: 170px">
+    <SPAN id=ctl00_mainContent_lblContractStatus 
+      class=inputlbl>STATUS(ステータス)</SPAN><BR>
+      <select name="ctl00$mainContent$ddlContractStatus" id="ctl00_mainContent_ddlContractStatus" class="inputText" style="width:90px;">
+		<option value="9999"></option>
+		<option selected="selected" value="0001">提案</option>
+		<option value="0002">承認中</option>
+		<option value="0003">承認済</option>
+		<option value="0006">キャンセル</option>
+
+	</select> 
+	</TD>
+    <TD style="WIDTH: 170px">
+    	<SPAN id=ctl00_mainContent_lblSaller  class=inputlbl>SALESMAN(販売担当者)</SPAN> <BR>
+	    <INPUT style="WIDTH: 120px"  id=ctl00_mainContent_txtSaller class=inputText name=ctl00$mainContent$txtSaller >
+    </TD>
+    <TD>
+    	<SPAN id=ctl00_mainContent_lblInvoiceDate  class=inputlbl>SALES DAY(販売日付)</SPAN><BR>
+    	<INPUT style="WIDTH: 120px"  id=ctl00_mainContent_txtInvoiceDate class=textBoxReadOnly 
+      		name=ctl00$mainContent$txtInvoiceDate readOnly value=2014/01/02> 
+    </TD>
+  </TR>
+  <TR>
+    <TD colSpan=2>
+    	<SPAN id=ctl00_mainContent_lblCustName  class=labelBld>CUSTEMER NAME(顧客名)</SPAN><BR>
+      <TEXTAREA style="WIDTH: 290px; HEIGHT: 50px" id=ctl00_mainContent_txtCustName 
+      	class=inputText name=ctl00$mainContent$txtCustName>
+      </TEXTAREA> 
+    </TD>
+    <TD colSpan=2>
+    	<SPAN id=ctl00_mainContent_lblMarks 
+      		class=labelBld>SHIPPINGMARK(マーク)</SPAN> <BR>
+      	<TEXTAREA style="WIDTH: 290px; HEIGHT: 50px" id=ctl00_mainContent_txtMarks 
+      		class=inputText name=ctl00$mainContent$txtMarks></TEXTAREA> 
+    </TD>
+    <TD colSpan=2>
+    	<SPAN id=ctl00_mainContent_lblDeliveryDate class=inputlbl>DELIVERY DATE(納期)</SPAN><BR>
+    	<TEXTAREA style="WIDTH: 290px; HEIGHT: 50px" onpropertychange=MaxLength(this,80) 
+    		id=ctl00_mainContent_txtDeliveryDate class=inputText name=ctl00$mainContent$txtDeliveryDate>
+        </TEXTAREA> 
+    </TD>
+  </TR>
+  <TR>
+    <TD colSpan=2><SPAN id=ctl00_mainContent_lblPortFrom class=labelBld>FROM（出発地）</SPAN><BR>
+      <SELECT style="WIDTH: 290px" id=ctl00_mainContent_ddlPortFrom name=ctl00$mainContent$ddlPortFrom> 
+        <OPTION selected value=""></OPTION> 
+        <OPTION value=0001>SHANGHAI,CHINA</OPTION> 
+        <OPTION value=0002>QINGDAO,CHINA</OPTION> 
+        <OPTION value=0003>SHENZHEN,CHINA</OPTION>
+      </SELECT> 
+    </TD>
+    <TD colSpan=2><SPAN id=ctl00_mainContent_lblPortTo class=labelBld>TO(目的地)</SPAN> <BR>
+      <SELECT style="WIDTH: 290px" id=ctl00_mainContent_ddlPortTo name=ctl00$mainContent$ddlPortTo> 
+      <OPTION selected value=""></OPTION> 
+      <OPTION value=0001>CHITTAGONG,BANGLADESH</OPTION> 
+      <OPTION value=0002>DHAKA,BANGLADESH</OPTION> 
+      <OPTION value=0003>HOCHIMINH,VIETNAM</OPTION> 
+      <OPTION value=0004>SHENZHEN, CHINA</OPTION> 
+      <OPTION value=0005>DANANG, VIETNAM</OPTION> 
+      <OPTION value=0006>CHENNAI, INDIA</OPTION> 
+      <OPTION value=0007>COLOMBO, SRI LANKA</OPTION> 
+      <OPTION value=0008>JAKARTA , INDONESIA</OPTION> 
+      <OPTION value=017>DANANG, VIETNAM</OPTION>
+      </SELECT> 
+    </TD>
+    <TD colSpan=2><SPAN id=ctl00_mainContent_lblTreadeTearms class=inputlblBld>TREADE TEARMS(貿易用語)</SPAN> <BR>
+      <SELECT style="WIDTH: 290px" id=ctl00_mainContent_ddlTreadeTearms name=ctl00$mainContent$ddlTreadeTearms> 
+	      <OPTION selected value=""></OPTION> 
+	      <OPTION value=0001>CNF CHITTAGONG,BANGLADESH</OPTION> 
+	      <OPTION value=0002>CNF DHAKA,BANGLADESH</OPTION> 
+	      <OPTION value=0003>FOBSHANGHAI,CHINA</OPTION> 
+	      <OPTION value=0004>FOB QINGDAO,CHINA</OPTION> 
+	      <OPTION value=0005>FOB SHENZHEN,CHINA</OPTION> 
+	      <OPTION value=0006>CNFHOCHIMINH,VIETNAM</OPTION> 
+	      <OPTION value=0007>FOB SHENZHEN,CHINA</OPTION> 
+	      <OPTION value=0008>CNF DANANG, VIETNAM</OPTION> 
+	      <OPTION value=0009>CIF CHENNAI</OPTION> 
+	      <OPTION value=0010>CNF COLOMBO</OPTION> 
+	      <OPTION value=0011>CIF JAKARTA</OPTION> 
+	      <OPTION value=0012>CIFVIETNAM</OPTION> 
+	      <OPTION value=0013>CIF HOCHIMING</OPTION>
+     </SELECT> 
+    </TD>
+   </TR>
+  <TR>
+    <TD colSpan=2><SPAN id=ctl00_mainContent_lblPayment class=labelBld>PAYMENT(支払方法)</SPAN><BR>
+      <SELECT style="WIDTH: 290px" id=ctl00_mainContent_ddlPayment 
+	      onchange="javascript:setTimeout('__doPostBack(\'ctl00$mainContent$ddlPayment\',\'\')', 0)" 
+	      class=inputText name=ctl00$mainContent$ddlPayment> 
+	      <OPTION selected value=""></OPTION> 
+	      <OPTION value=0001>L/C AT SIGHT</OPTION> 
+	      <OPTION value=0002>T/T</OPTION> 
+	      <OPTION value=0003>L/C AT 90 DAYS SIGHT</OPTION> 
+	      <OPTION value=0004>L/C AT 120DAYS SIGHT</OPTION> 
+	      <OPTION value=0005>L/C AT 60 DAYS SIGHT</OPTION> 
+	      <OPTION value=0006>D/P</OPTION> <OPTION value=0007>L/C AT 120 DAYS FROM THE DATE OF SHIPMENT</OPTION> 
+	      <OPTION value=0008>L/C AT 120 DAYS FROM B/L DATE</OPTION> 
+	      <OPTION value=014>L/C AT 90 DAYS FROM THE DATE OF SHIPMENT</OPTION> 
+	      <OPTION value=015>TT BEFORE SHIPMENT</OPTION> 
+	      <OPTION value=016>L/C AT 120 DAYS FROM THE DATE OF NEGOTIATION</OPTION> 
+	      <OPTION value=017>L/C AT 90 DAYS FROM THE DATE OF NEGOTIATION</OPTION>
+      </SELECT> 
+    </TD>
+    <TD colSpan=2><SPAN id=ctl00_mainContent_lblCreditNo class=inputlbl>CREDITNO(信用番号)</SPAN><BR>
+    	<INPUT style="WIDTH: 290px" id=ctl00_mainContent_txtCreditNo class=inputText name=ctl00$mainContent$txtCreditNo maxLength=30> 
+    </TD>
+    <TD colSpan=2><SPAN id=ctl00_mainContent_lblCreditNo class=inputlbl>AMOUNTS(総金額)</SPAN><BR>
+    	<INPUT style="WIDTH: 290px" id=ctl00_mainContent_txtAmounts class=inputText name=ctl00$mainContent$txtAmounts maxLength=30> 
+    </TD>  
+  </TR>
+  <TR>
+    <TD colSpan=6><SPAN id=ctl00_mainContent_lblMemo class=inputlbl>MEMO(備考)</SPAN><BR>
+    <TEXTAREA style="WIDTH: 630px; HEIGHT: 50px" onpropertychange=MaxLength(this,200) 
+    	id=ctl00_mainContent_txtMemo class=inputText name=ctl00$mainContent$txtMemo></TEXTAREA> 
+  </TD>
+  </TR>
+  </TBODY>
+</TABLE>
+</FIELDSET> 
+</DIV>
+<DIV style="WIDTH: 100%" id=ctl00_mainContent_pnlBank class=panelGrid>
+<FIELDSET><LEGEND>銀行情報 </LEGEND>
+<TABLE style="WIDTH: 100%" border=0 cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px" colSpan=2>
+      <DIV style="WIDTH: 300px; FLOAT: left">
+      	<SPAN id=ctl00_mainContent_lblBank class=labelBld>BANK_NAME(銀行名)</SPAN> <BR>
+      	<SELECT style="WIDTH: 280px" id=ctl00_mainContent_ddlBank 
+	      	onchange="javascript:setTimeout('__doPostBack(\'ctl00$mainContent$ddlBank\',\'\')', 0)" 
+	      	class=inputText name=ctl00$mainContent$ddlBank> 
+      	<OPTION selected value=""></OPTION> 
+      	<OPTION value=001>汇丰</OPTION> 
+      	<OPTION value=002>农行</OPTION> 
+      	<OPTION value=003>富国</OPTION>
+      	</SELECT> 
+      </DIV>
+      <DIV style="FLOAT: left"><BR>
+      <TABLE id=ctl00_mainContent_rdlBank class=inputlbl onclick="funBankShowTypeSelectd('ctl00_mainContent_rdlBank');" border=0>
+        <TBODY>
+        <TR>
+          <TD></TD>
+        </TR>
+        </TBODY>
+        </TABLE>
+       </DIV>
+       </TD>
+       </TR>
+  <TR class=trBankNormal>
+    <TD style="WIDTH: 300px">
+    	<SPAN id=ctl00_mainContent_lblBankSwift 
+      	class=inputlbl>SWIFT(銀行コード)</SPAN> <BR>
+      <INPUT style="WIDTH: 280px" id=ctl00_mainContent_txtBankSwift class=textBoxReadOnly name=ctl00$mainContent$txtBankSwift readOnly maxLength=40> 
+    </TD>
+    <TD><SPAN id=ctl00_mainContent_lblAccountNo class=inputlbl>ACCOUNT NO(アカウント)</SPAN> <BR>
+    <INPUT style="WIDTH: 280px" 
+      id=ctl00_mainContent_txtAccountNo class=textBoxReadOnly 
+      name=ctl00$mainContent$txtAccountNo readOnly maxLength=40> 
+      </TD>
+  </TR>
+  <TR class=trBankNormal>
+    <TD colSpan=2><SPAN id=ctl00_mainContent_lblBankAddr 
+      class=inputlbl>ADDRESS(住所)</SPAN><BR>
+      <TEXTAREA style="WIDTH: 580px; HEIGHT: 50px" id=ctl00_mainContent_txtBankAddr 
+      class=textBoxReadOnly readOnly name=ctl00$mainContent$txtBankAddr>
+      </TEXTAREA> 
+    </TD>
+  </TR>
+  <TR style="DISPLAY: none" class=trBankDesc>
+    <TD colSpan=2>
+    </TD>
+  </TR>
+ </TBODY>
+</TABLE>
+</FIELDSET> 
+</DIV>
+<BR>
+
+<DIV style="WIDTH: 100%" id=ctl00_mainContent_Panel1 class=panelInfo>
+<TABLE
+    style="WIDTH: 100%; MARGIN-BOTTOM: 5px; MARGIN-LEFT: 5px; MARGIN-RIGHT: -5px"
+    border=0 cellSpacing=0 cellPadding=0>
+    <TBODY>
+        <TR>
+            <TD style="WIDTH: 170px"><SPAN id=ctl00_mainContent_lblCreateBy
+                class=inputlbl>作成者</SPAN><BR>
+            <INPUT style="WIDTH: 120px" id=ctl00_mainContent_txtCreateBy
+                class=textBoxReadOnly name="createUser" readOnly
+                value=""></TD>
+            <TD style="WIDTH: 170px"><SPAN
+                id=ctl00_mainContent_lblCreateDate class=inputlbl>作成日</SPAN><BR>
+            <INPUT style="WIDTH: 120px" id=ctl00_mainContent_txtCreateDate
+                class=textBoxReadOnly name="createDate" readOnly
+                value=""></TD>
+            <TD style="WIDTH: 170px"><SPAN id=ctl00_mainContent_lblUpdateBy
+                class=inputlbl>更新者</SPAN><BR>
+            <INPUT style="WIDTH: 120px" id=ctl00_mainContent_txtUpdateBy
+                class=textBoxReadOnly name="updateUser" readOnly
+                value=""></TD>
+            <TD style="WIDTH: 170px"><SPAN
+                id=ctl00_mainContent_lblUpdateDate class=inputlbl>更新日</SPAN><BR>
+            <INPUT style="WIDTH: 120px" id=ctl00_mainContent_txtUpdateDate
+                class=textBoxReadOnly name="updateDate" readOnly
+                value=""></TD>
+        </TR>
+    </TBODY>
+</TABLE>
+</DIV>
+</DIV>
+<INPUT id=ctl00_hidTime name=ctl00$hidTime
+    value=2014/02/17 17:03:28 type=hidden> 
+</FORM>
+
+<DIV id=CopyRight class=CopyRight><SPAN id=ctl00_rightPage>Wuxi NTT DATA Co., Ltd.</SPAN> </DIV>
+
+</BODY>
+</HTML>

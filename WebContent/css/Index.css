@@ -1,0 +1,43 @@
+﻿@charset "UTF-8";
+BODY {
+	BACKGROUND-COLOR: #f7f7f7; MARGIN: 0px; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 100% 100%; COLOR: #333333
+}
+A {
+	COLOR: #3366cc; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff6600; TEXT-DECORATION: underline; TOP: 1px; LEFT: 1px
+}
+.SystemMessageTitle {
+	COLOR: #333333; FONT-SIZE: 15px
+}
+.SystemMessage {
+	LINE-HEIGHT: 180%; FONT-FAMILY: Arial,Helvetica, sans-serif; COLOR: #333333; FONT-SIZE: 14px
+}
+.SystemMessagewrong {
+	LINE-HEIGHT: 180%; FONT-FAMILY: simsun; COLOR: #ff0000; FONT-SIZE: 12px
+}
+.SystemMessageright {
+	LINE-HEIGHT: 180%; FONT-FAMILY: simsun; COLOR: #224499; FONT-SIZE: 12px
+}
+.CopyRight {
+	BACKGROUND-IMAGE: url(../Image/001.jpg); TEXT-ALIGN: center; LINE-HEIGHT: 30px; MARGIN-TOP: 8px; WIDTH: 1250px; BACKGROUND-REPEAT: repeat-x; HEIGHT: 33px; COLOR: white; FONT-SIZE: 12px; OVERFLOW: auto
+}
+.login-lbl {
+	FLOAT: right; FONT-SIZE: 15px
+}
+.UserNotice {
+	POSITION: relative; LINE-HEIGHT: 25px; WIDTH: 700px; FLOAT: left; HEIGHT: 25px; COLOR: #666666; FONT-SIZE: 12px; TOP: 59px; LEFT: 500px
+}
+.IndexPage {
+	BACKGROUND-COLOR: #ffffff
+}
+.LogHelp {
+	BACKGROUND-IMAGE: url(../Image/btnHelp.png); TEXT-INDENT: 15px; WIDTH: 80px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left center; HEIGHT: 20px
+}
+.LogReturn {
+	BACKGROUND-IMAGE: url(../Image/btnReturn.png); TEXT-INDENT: 15px; WIDTH: 80px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left center; HEIGHT: 20px
+}
+.LogExsit {
+	BACKGROUND-IMAGE: url(../Image/btnExsit.png); TEXT-INDENT: 15px; WIDTH: 80px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left center; HEIGHT: 20px
+}

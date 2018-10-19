@@ -1,0 +1,198 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>販売契約検索</TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<LINK rel=stylesheet type=text/css href="../CSS/Index.css">
+<LINK rel=stylesheet type=text/css href="../CSS/Style.css">
+</HEAD>
+<BODY onload=getTime(getTimeSub());>
+<FORM style="TEXT-ALIGN: center" method=post action="salecontractsearch">
+<DIV style="WIDTH: 1158px; HEIGHT: 150px">
+<SCRIPT language=javascript type=text/javascript>
+    var timeClient = new Date();
+    function getTimeSub() {
+        var strTimeServer;
+        var timeServer;
+        if (document.getElementById('ctl00_hidTime') != null) {
+            strTimeServer = document.getElementById('ctl00_hidTime').value;
+            timeServer = new Date(strTimeServer);
+        }
+        var timeSub = Math.round((timeServer.getTime() - timeClient.getTime()) / 1000);
+        return timeSub;
+    }
+    function getTime(n) {
+        var clientTime = new Date();
+        clientTime.setTime(clientTime.getTime() + n * 1000);
+        var nowTime = clientTime.toLocaleDateString() + " " + clientTime.toLocaleTimeString();
+        if (document.getElementById('ctl00_lblTime') != null) {
+            document.getElementById('ctl00_lblTime').innerText = nowTime;
+        }
+        setTimeout("getTime(getTimeSub())", 1000);
+    }
+    function openHelpDoc() {
+        window.open('Help/List.htm', 'newwindow', 'width=800,height=700,scrollbars=yes,resizable=yes,location=yes');
+        return false;
+    }
+    function show(id){
+        document.getElementById(id).style.display='block';
+    }
+    function hide(id){
+        document.getElementById(id).style.display='none';
+    }
+</SCRIPT>
+<DIV style="TEXT-ALIGN: center">
+    <DIV style="BACKGROUND-IMAGE: url(../Image/bj.jpg); WIDTH: 1250px; BACKGROUND-REPEAT: repeat-x">
+        <DIV style="BACKGROUND-IMAGE: url(../Image/top.jpg); TEXT-ALIGN: left; MARGIN: auto; WIDTH: 92%; BACKGROUND-REPEAT: no-repeat; HEIGHT: 82px">
+            <DIV class=UserNotice>
+                <DIV style="WIDTH: 50%; FLOAT: left">
+                    <SPAN id=ctl00_lblUserID>ユーザー名：</SPAN><SPAN id=ctl00_lblUserName>
+                   
+                   Admin
+                   </SPAN> &nbsp; <SPAN id=ctl00_lblTime></SPAN>
+                </DIV>
+                <DIV style="WIDTH: 50%; FLOAT: left">
+                    <A id=ctl00_lnkHelp class=LogHelp onClick="return openHelpDoc();" href="javascript:__doPostBack('ctl00$lnkHelp','')">ヘルプ</A>
+                    <A id=ctl00_lnkReturn class=LogReturn href="../MainMenu.htm">メイン画面</A> 
+                    <A id=ctl00_lnkExit class=LogExsit href="../login.htm">ログアウト</A> 
+                </DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+    <div id="ddst" class="ddst">
+        <ul id="nav" style="BACKGROUND-IMAGE: url(../Image/001.jpg); PADDING-LEFT: 3%; WIDTH: 1250px; BACKGROUND-REPEAT: repeat-x">
+            <li onMouseOver="show('nav_1');" onMouseOut="hide('nav_1')" ><a href="#">販売契約</a>
+                <ul id="nav_1">
+                    <li><a href="SaleContractSearch.htm">販売契約検索</a></li>
+                </ul>
+            </li>
+            <li onMouseOver="show('nav_2');" onMouseOut="hide('nav_2')" ><a href="#">基本情報</a>
+                <ul id="nav_2">
+                    <li><a href="../User/UserSearch.htm">ユーザー検索</a></li>
+                </ul>
+            </li>
+            <li onMouseOver="show('nav_3');" onMouseOut="hide('nav_3')" ><a href="#">マスタ情報</a>
+                <ul id="nav_3">
+                    <li><a href="../Master/BankAdd.htm">銀行</a></li>
+                    <li><a href="../Master/StatusAdd.htm">ステータス</a></li>
+                    <li><a href="../Master/PaymentAdd.htm">支払方法</a></li>
+                    <li><a href="../Master/UnitAdd.htm">単位</a></li>
+                    <li><a href="../Master/PortAdd.htm">地点</a></li>
+                    <li><a href="../Master/CurrencyAdd.htm">通貨種別</a></li>
+                    <li><a href="../Master/TradeLanAdd.htm">貿易用語</a></li>
+                    <li><a href="../Master/RootAdd.htm">権限</a></li>
+                </ul>
+            </li>
+            <li class="yy"></li>
+        </ul>
+    </div>
+</DIV>
+</DIV>
+<DIV style="WIDTH: 1158px; HEIGHT: 30px">
+    <DIV style="BACKGROUND-IMAGE: url(../Image/006.jpg); TEXT-ALIGN: left; MARGIN-TOP: 20px; TEXT-INDENT: 20px; WIDTH: 65%; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 28px"><SPAN
+        id=ctl00_lbltitle class=title>販売契約検索</SPAN>
+    </DIV>
+    <DIV style="TEXT-ALIGN: left; MARGIN-TOP: 20px; WIDTH: 30%; FLOAT: right; HEIGHT: 50px">
+        <DIV style="WIDTH: 354px" id=ctl00_panelMsg class=panelGrid>
+           <FIELDSET>
+               <LEGEND>システム情報 </LEGEND>&nbsp; 
+               <SPAN
+                  style="COLOR: red" id=ctl00_lblErrorMessage class=MsgStyle>
+               </SPAN>
+           </FIELDSET>
+        </DIV>
+    </DIV>
+</DIV>
+<DIV style="TEXT-ALIGN: left; WIDTH: 1158px">
+<DIV class=tbTitile><SPAN id=ctl00_mainContent_SearchText
+    class=inputlbl>検索条件</SPAN>
+</DIV>
+
+<DIV class=tbContent>
+	<table style="width: 100%;" cellpadding="0" cellspacing="0">
+	<tr>
+	    <td style="width: 200px;">
+	        <span id="ctl00_mainContent_lblContractNo" class="inputlbl">CONTRACT NO(契約番号)</span><br />
+	        <input name="ctl00$mainContent$txtContractNo" type="text" id="ctl00_mainContent_txtContractNo" class="inputText" style="width:160px;" />
+	    </td>
+	    <td style="width: 140px;">
+	        <span id="ctl00_mainContent_lblCurrency" class="inputlbl">CURRENCY(通貨種別)</span><br />
+	        <select name="ctl00$mainContent$ddlCurrency" id="ctl00_mainContent_ddlCurrency" class="inputText" style="width:90px;">
+	<option selected="selected" value=""></option>
+	<option value="0001">RMB</option>
+	<option value="0002">USD</option>
+
+	</select>
+	    </td>
+	    <td style="width: 200px;" >
+	        <span id="ctl00_mainContent_lblPayment" class="inputlbl">PAYMENT(支払方法)</span><br />
+	        <select name="ctl00$mainContent$ddlPayment" id="ctl00_mainContent_ddlPayment" class="inputText" style="width:170px;">
+			<option selected="selected" value=""></option>
+			<option value="0001">L/C AT SIGHT</option>
+			<option value="0002">T/T</option>
+			<option value="0003">L/C AT 90 DAYS SIGHT</option>
+			<option value="0004">L/C AT 120DAYS SIGHT</option>
+			<option value="0005">L/C AT 60 DAYS SIGHT</option>
+			<option value="0006">D/P</option>
+			<option value="0007">L/C AT 120 DAYS FROM THE DATE OF SHIPMENT</option>
+			<option value="0008">L/C AT 120 DAYS FROM B/L DATE</option>
+			<option value="014">L/C AT 90 DAYS FROM THE DATE OF SHIPMENT</option>
+			<option value="015">TT BEFORE SHIPMENT</option>
+			<option value="016">L/C AT 120 DAYS FROM THE DATE OF NEGOTIATION</option>
+			<option value="017">L/C AT 90 DAYS FROM THE DATE OF NEGOTIATION</option>
+			</select>
+	    </td>
+	    <td style="width: 140px;">
+	        <span id="ctl00_mainContent_lblContractStatus" class="inputlbl">STATUS(ステータス)</span>
+	        <br />
+	        <select name="ctl00$mainContent$ddlContractStatus" id="ctl00_mainContent_ddlContractStatus" class="inputText" style="width:90px;">
+				<option selected="selected" value=""></option>
+				<option value="0001">提案</option>
+				<option value="0002">承認中</option>
+				<option value="0003">承認済</option>
+				<option value="0006">キャンセル</option>
+			</select>
+	    </td>
+	    <td>
+	        <span id="ctl00_mainContent_lblCreateDate" class="inputlbl">CONTRACT PERIOD(契約期間)</span><br />
+	        <input name="ctl00$mainContent$txtCreateDateFrom" type="text" id="ctl00_mainContent_txtCreateDateFrom" class="inputText" style="width:100px;" />
+	        <input id="btnCreateDateFrom" class="btnDate" onClick="OpenDate(ctl00_mainContent_txtCreateDateFrom)"
+	            type="button" />
+	        <span>~</span>
+	        <input name="ctl00$mainContent$txtCreateDateTo" type="text" id="ctl00_mainContent_txtCreateDateTo" class="inputText" style="width:100px;" />
+	        <input id="btnCreateDateTo" class="btnDate" onClick="OpenDate(ctl00_mainContent_txtCreateDateTo)"
+	            type="button" />
+	    </td>
+	</tr>
+	<tr>
+	    <td colspan="2">
+	        <span id="ctl00_mainContent_lblCustID" class="inputlbl">CUSTEMER NAME(顧客名)</span><br />
+	        <input name="ctl00$mainContent$txtCustID" type="text" id="ctl00_mainContent_txtCustID" class="inputText" style="width:290px;" />
+	    </td>
+	    <td colspan="2">
+	        <span id="ctl00_mainContent_lblFromPort" class="inputlbl">FROM(出発地)</span><br />
+	        <input name="ctl00$mainContent$txtFromPort" type="text" id="ctl00_mainContent_txtFromPort" class="inputText" style="width:290px;" />
+	    </td>
+	     <td style="width: 290px;">
+	        <span id="ctl00_mainContent_lblToPort" class="inputlbl">TO(目的地)</span><br />
+	        <input name="ctl00$mainContent$txtToPort" type="text" id="ctl00_mainContent_txtToPort" class="inputText" style="width:270px;" />
+	    </td>
+	     <td >
+	        <span id="ctl00_mainContent_lblMarks" class="inputlbl">SHIPPINGMARK(マーク)</span><br />
+	        <input name="ctl00$mainContent$txtMarks" type="text" id="ctl00_mainContent_txtMarks" class="inputText" style="width:150px;" />
+	    </td>
+	</tr>
+	</table>
+</DIV>
+<DIV style="TEXT-ALIGN: right; WIDTH: 100%" class=btnContent>
+<a href="SaleContractList.htm" class="btn"><center>検索</center></a>
+<a href="SaleContractAdd.htm" class="btn"><center>追加</center></a>
+</DIV>
+<INPUT id=ctl00_hidTime name=ctl00$hidTime value=2014/02/17 15:08:36 type=hidden />
+</DIV>
+</FORM>
+
+<DIV id=CopyRight class=CopyRight><SPAN id=ctl00_rightPage>Wuxi NTT DATA Co., Ltd.</SPAN> </DIV>
+
+</BODY>
+</HTML>

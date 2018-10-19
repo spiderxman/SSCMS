@@ -1,0 +1,605 @@
+@charset "UTF-8";
+*{
+ font-size:12px;
+ font-family:Tahoma, Geneva, sans-serif;
+ }
+
+#nav a{
+ display:block;
+ width:100px;
+ }
+#nav{
+ margin:0;
+ padding:0;
+ } 
+
+#nav li{
+ list-style-type:none;
+ float:left;
+ text-align:center;
+ }
+ 
+#nav li a{
+ color:white;
+ background:url('../Image/OrderManage.jpg');
+ height:36px;
+ padding:0px 14px;
+ }
+#nav li a:hover{
+ color:white;
+  } 
+#nav li ul{
+ list-style-type:none;
+ margin:0px;
+ padding:2px;
+ display:none;
+ }
+#nav li ul li{
+ float:none;
+ } 
+#nav li ul li a{
+ width:90px;
+ height:25px;
+ background:url('../Image/010.png');
+ color:white;
+ padding:6px;
+ }
+#nav li ul li a:hover{
+ background:url('../Image/010.png');
+ color:white;
+ }
+#ddss{
+ position:absolute;
+ top:40px;
+ left:9px;
+ width:950px;
+ height:20px;
+ background:#CCC;
+ margin:5px 0 0 0;
+ z-index:1
+}
+.yy{clear:both;height:10px;line-height:1px;font-size:1px;} 
+#ddst{
+ position:absolute;
+ top:77px;
+ left:4px;
+ margin:5px 0 0 0;
+ z-index:2
+}
+
+
+
+
+.form {
+	
+}
+.commandExButton {
+	
+}
+.commandExButton_Label {
+	TEXT-ALIGN: center; COLOR: windowtext; VERTICAL-ALIGN: middle
+}
+.commandLink {
+	
+}
+.outputLinkEx {
+	
+}
+.graphicImageEx {
+	
+}
+.outputLabel {
+	
+}
+.inputText_Error {
+	BORDER-BOTTOM-STYLE: solid; BORDER-BOTTOM-COLOR: #c3c3c3; BORDER-TOP-COLOR: #c3c3c3; BORDER-LEFT-STYLE: solid; BORDER-TOP-STYLE: solid; BORDER-RIGHT-COLOR: #c3c3c3; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-COLOR: #c3c3c3
+}
+.inputTextarea {
+	
+}
+.inputSecret {
+	
+}
+.outputText {
+	
+}
+.outputFormat {
+	
+}
+.outputSeparator {
+	
+}
+.message {
+	
+}
+.messages {
+	
+}
+.selectBooleanCheckbox {
+	
+}
+.selectOneRadio {
+	
+}
+.selectOneRadio_Disabled {
+	COLOR: graytext
+}
+.selectManyCheckbox {
+	
+}
+.selectManyCheckbox_Disabled {
+	COLOR: graytext
+}
+.selectOneListbox {
+	
+}
+.selectManyListbox {
+	
+}
+.selectOneMenu {
+	
+}
+.fileupload {
+	BACKGROUND-IMAGE: none; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BACKGROUND-COLOR: #ffffff; MARGIN-TOP: 4px; WIDTH: 525px; BORDER-TOP: #999999 1px solid; MARGIN-RIGHT: 16px; BORDER-RIGHT: #999999 1px solid
+}
+.panelBox {
+	BACKGROUND-COLOR: #e7f5ff; MARGIN-TOP: 5px; COLOR: #0000ff; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.panelBoxPop {
+	BACKGROUND-COLOR: #f5f5f5; COLOR: #0000ff; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.panelInfo {
+	BORDER-BOTTOM: #808080 1px solid; BORDER-LEFT: #808080 1px solid; BACKGROUND-COLOR: #f5f5f5; WIDTH: 1135px; COLOR: #0000ff; FONT-SIZE: 13px; BORDER-TOP: #808080 1px solid; BORDER-RIGHT: #808080 1px solid
+}
+.panelLayout {
+	
+}
+.panelGrid {
+	WIDTH: 1135px
+}
+.panelGrid LEGEND {
+	FONT-SIZE: 13px
+}
+.jspPanel {
+	
+}
+.playerGenericPlayer {
+	
+}
+.playerFlash {
+	
+}
+.playerShockwave {
+	
+}
+.playerRealPlayer {
+	
+}
+.playerMediaPlayer {
+	
+}
+.panelActionbar {
+	
+}
+.panelActionbar A:link {
+	TEXT-DECORATION: none
+}
+.panelActionbar A:visited {
+	TEXT-DECORATION: none
+}
+.panelActionbar A:hover {
+	TEXT-DECORATION: underline
+}
+.panelActionbar IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.panelActionbar TD {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px
+}
+.inputText_Slider {
+	BORDER-BOTTOM: windowframe 1px solid; BORDER-LEFT: windowframe 1px solid; BACKGROUND-COLOR: buttonface; FONT-FAMILY: sans-serif; COLOR: windowtext; BORDER-TOP: windowframe 1px solid; BORDER-RIGHT: windowframe 1px solid; font-decoration: none
+}
+.inputText_Slider_Body {
+	BORDER-BOTTOM-STYLE: solid; BORDER-BOTTOM-COLOR: threedhighlight; BACKGROUND-COLOR: buttonface; BORDER-TOP-COLOR: threedhighlight; BORDER-LEFT-STYLE: solid; BORDER-TOP-STYLE: solid; COLOR: threedshadow; BORDER-RIGHT-COLOR: threedshadow; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-COLOR: threedhighlight
+}
+.inputText_DatePicker {
+	BORDER-BOTTOM: buttonshadow 1px solid; BORDER-LEFT: buttonshadow 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: buttonface; MARGIN: 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; COLOR: windowtext; FONT-SIZE: 8pt; BORDER-TOP: buttonshadow 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: buttonshadow 1px solid; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.inputText_DatePicker-Size {
+	
+}
+.inputText_DatePicker-Header {
+	BORDER-BOTTOM: buttonshadow 1px solid; BORDER-LEFT: buttonshadow 0px solid; BORDER-TOP: buttonshadow 0px solid; BORDER-RIGHT: buttonshadow 0px solid
+}
+.inputText_DatePicker-Body {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: window; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.inputText_DatePicker-HeaderLine1 {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 8pt; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.inputText_DatePicker-HeaderLine2 {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 8pt; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.inputText_DatePicker-HeaderWeekday {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 8pt; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.inputText_DatePicker-HeaderYear {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 8pt; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.inputText_DatePicker-HeaderMonth {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 8pt; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.inputText_DatePicker-HeaderLine1 {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; WIDTH: 12px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.inputText_DatePicker-HeaderYear {
+	PADDING-BOTTOM: 1px; COLOR: windowtext; PADDING-TOP: 2px
+}
+.inputText_DatePicker-HeaderLine2 {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 2px; WIDTH: 12px; PADDING-RIGHT: 2px
+}
+.inputText_DatePicker-HeaderMonth {
+	PADDING-BOTTOM: 3px; COLOR: windowtext
+}
+.inputText_DatePicker-Button {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 12px; HEIGHT: 12px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.inputText_DatePicker-HeaderWeekday {
+	PADDING-BOTTOM: 2px; BACKGROUND-COLOR: buttonface; COLOR: windowtext; PADDING-TOP: 1px
+}
+.inputText_DatePicker-OtherMonth {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: 1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+.inputText_DatePicker-CurrentMonth {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: 1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+.inputText_DatePicker-CurrentDay {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: 1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+.inputText_DatePicker-CurrentOtherDay {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: 1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+.inputText_DatePicker-InvalidDay {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: 1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+.inputText_DatePicker-Today {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: 1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+.inputText_DatePicker-CurrentToday {
+	BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 9pt; VERTICAL-ALIGN: middle; BORDER-TOP: 1px solid; FONT-WEIGHT: normal; BORDER-RIGHT: 1px solid; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+.inputText_DatePicker-OtherMonth {
+	BORDER-BOTTOM-COLOR: window; BORDER-TOP-COLOR: window; COLOR: graytext; BORDER-RIGHT-COLOR: window; BORDER-LEFT-COLOR: window
+}
+.inputText_DatePicker-CurrentMonth {
+	BORDER-BOTTOM-COLOR: window; BORDER-TOP-COLOR: window; COLOR: windowtext; BORDER-RIGHT-COLOR: window; BORDER-LEFT-COLOR: window
+}
+.inputText_DatePicker-CurrentDay {
+	BORDER-BOTTOM-COLOR: window; BACKGROUND-COLOR: highlight; BORDER-TOP-COLOR: window; COLOR: highlighttext; BORDER-RIGHT-COLOR: window; BORDER-LEFT-COLOR: window
+}
+.inputText_DatePicker-CurrentOtherDay {
+	BORDER-BOTTOM-COLOR: window; BACKGROUND-COLOR: highlight; BORDER-TOP-COLOR: window; COLOR: highlighttext; BORDER-RIGHT-COLOR: window; BORDER-LEFT-COLOR: window
+}
+.inputText_DatePicker-InvalidDay {
+	BORDER-BOTTOM-COLOR: buttonface; BACKGROUND-COLOR: buttonface; BORDER-TOP-COLOR: buttonface; COLOR: graytext; BORDER-RIGHT-COLOR: buttonface; BORDER-LEFT-COLOR: buttonface
+}
+.inputText_DatePicker-Today {
+	BORDER-BOTTOM-COLOR: buttonshadow; BACKGROUND-COLOR: window; BORDER-TOP-COLOR: buttonshadow; COLOR: windowtext; BORDER-RIGHT-COLOR: buttonshadow; BORDER-LEFT-COLOR: buttonshadow; FONT-WEIGHT: bold
+}
+.inputText_DatePicker-CurrentToday {
+	BORDER-BOTTOM-COLOR: window; BACKGROUND-COLOR: highlight; BORDER-TOP-COLOR: window; COLOR: highlighttext; BORDER-RIGHT-COLOR: window; BORDER-LEFT-COLOR: window; FONT-WEIGHT: bold
+}
+.headerClass {
+	BORDER-BOTTOM: threedshadow 1px solid; BORDER-LEFT: threedshadow 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: threedface; MARGIN: 2px; PADDING-LEFT: 4pt; PADDING-RIGHT: 4pt; COLOR: windowtext; BORDER-TOP: threedshadow 1px solid; FONT-WEIGHT: 400; BORDER-RIGHT: threedshadow 1px solid; PADDING-TOP: 0px
+}
+.footerClass {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: threedface; PADDING-LEFT: 4pt; PADDING-RIGHT: 4pt; COLOR: windowtext; BORDER-TOP: 0px; FONT-WEIGHT: 400; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+.panelRowCategory {
+	
+}
+.inputRowSelect {
+	MARGIN: 1px 0px 0px 3px; VERTICAL-ALIGN: middle
+}
+.commandExRowEdit {
+	
+}
+.editStyleClass {
+	BORDER-BOTTOM: windowframe 1px solid; TEXT-ALIGN: right; BORDER-LEFT: windowframe 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: window; BORDER-TOP: windowframe 1px solid; BORDER-RIGHT: windowframe 1px solid
+}
+.editStyleClass A {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 1px; PADDING-RIGHT: 0px; HEIGHT: 1px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+.pagerDeluxe {
+	BORDER-BOTTOM: threedface 1px solid; BORDER-LEFT: threedface 1px solid; BACKGROUND-COLOR: threedface; BORDER-TOP: threedface 1px solid; BORDER-RIGHT: threedface 1px solid
+}
+.pagerDeluxe TD {
+	BORDER-BOTTOM: threedshadow 1px solid; BORDER-LEFT: threedshadow 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: transparent; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: threedshadow 1px solid; BORDER-RIGHT: threedshadow 1px solid; PADDING-TOP: 0px
+}
+.pagerDeluxe_button {
+	BORDER-BOTTOM: window 1px solid; BORDER-LEFT: window 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: threedface; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 22px; PADDING-RIGHT: 0px; HEIGHT: 19px; FONT-SIZE: 0px; BORDER-TOP: window 1px solid; BORDER-RIGHT: window 1px solid; PADDING-TOP: 0px
+}
+.pagerDeluxe_text {
+	BORDER-BOTTOM: threedface 0px solid; TEXT-ALIGN: center; BORDER-LEFT: threedface 0px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: threedface; MARGIN: 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; COLOR: windowtext; FONT-SIZE: 13px; VERTICAL-ALIGN: middle; BORDER-TOP: threedface 0px solid; BORDER-RIGHT: threedface 0px solid; PADDING-TOP: 0px
+}
+.pagerDeluxe_button_twistie {
+	BORDER-BOTTOM-COLOR: windowtext; LIST-STYLE-TYPE: none; BORDER-TOP-COLOR: windowtext; COLOR: windowtext; BORDER-RIGHT-COLOR: windowtext; BORDER-LEFT-COLOR: windowtext
+}
+.buttonBig {
+	BORDER-BOTTOM: #dbe4ee 1px outset; TEXT-ALIGN: center; BORDER-LEFT: #dbe4ee 1px outset; BACKGROUND-COLOR: #4f6783; WIDTH: 50px; COLOR: white; FONT-SIZE: 18pt; VERTICAL-ALIGN: middle; BORDER-TOP: #dbe4ee 1px outset; BORDER-RIGHT: #dbe4ee 1px outset; PADDING-TOP: 5px
+}
+.buttonNormal {
+	BORDER-BOTTOM: white 3px outset; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='White', endColorStr='#B6CDFB', gradientType='0'); BORDER-LEFT: white 3px outset; BACKGROUND-COLOR: #bbd2fe; WIDTH: 107px; HEIGHT: 28px; COLOR: black; BORDER-TOP: white 3px outset; CURSOR: pointer; BORDER-RIGHT: white 3px outset; PADDING-TOP: 3pt
+}
+.buttonMiddle {
+	BORDER-BOTTOM: white 3px outset; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='White', endColorStr='#B6CDFB', gradientType='0'); BORDER-LEFT: white 3px outset; BACKGROUND-COLOR: #bbd2fe; WIDTH: 45px; HEIGHT: 22px; COLOR: black; BORDER-TOP: white 3px outset; BORDER-RIGHT: white 3px outset
+}
+.buttonNormalX2 {
+	BORDER-BOTTOM: white 3px outset; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='White', endColorStr='#B6CDFB', gradientType='0'); BORDER-LEFT: white 3px outset; BACKGROUND-COLOR: #bbd2fe; WIDTH: 107px; HEIGHT: 58px; COLOR: black; BORDER-TOP: white 3px outset; BORDER-RIGHT: white 3px outset; PADDING-TOP: 3pt
+}
+.TextAeraFlat {
+	SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-FACE-COLOR: #9ebfe8; BACKGROUND-COLOR: transparent; SCROLLBAR-DARKSHADOW-COLOR: #9ebfe8; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #ffffff; OVERFLOW: scroll; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #9ebfe8
+}
+.TextAera3D {
+	SCROLLBAR-ARROW-COLOR: #458ce4; SCROLLBAR-FACE-COLOR: #dbebef; BACKGROUND-COLOR: transparent; SCROLLBAR-DARKSHADOW-COLOR: #458ce4; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #d8d6fa; OVERFLOW: scroll; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #dbebef
+}
+.divScrollbarFlat {
+	SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-FACE-COLOR: #9ebfe8; BACKGROUND-COLOR: transparent; SCROLLBAR-DARKSHADOW-COLOR: #9ebfe8; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #ffffff; OVERFLOW: scroll; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #9ebfe8
+}
+.divScrollbar3D {
+	SCROLLBAR-ARROW-COLOR: #458ce4; SCROLLBAR-FACE-COLOR: #dbebef; BACKGROUND-COLOR: transparent; SCROLLBAR-DARKSHADOW-COLOR: #458ce4; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #d8d6fa; OVERFLOW: scroll; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #dbebef
+}
+.divScrollbar3D-Y {
+	SCROLLBAR-ARROW-COLOR: #458ce4; SCROLLBAR-FACE-COLOR: #dbebef; OVERFLOW-Y: scroll; BACKGROUND-COLOR: transparent; SCROLLBAR-DARKSHADOW-COLOR: #458ce4; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #d8d6fa; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #dbebef
+}
+.divScrollbar3D-X {
+	SCROLLBAR-ARROW-COLOR: #458ce4; SCROLLBAR-FACE-COLOR: #dbebef; OVERFLOW-X: scroll; BACKGROUND-COLOR: transparent; SCROLLBAR-DARKSHADOW-COLOR: #458ce4; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #d8d6fa; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #dbebef
+}
+.title {
+	FONT-STYLE: normal; COLOR: #333333; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+.titleNormal {
+	COLOR: #800000; FONT-SIZE: 8pt
+}
+.labelBld {
+	LINE-HEIGHT: 20px; COLOR: #333333; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.inputlblBld {
+	LINE-HEIGHT: 20px; COLOR: #333333; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.inputlbl {
+	LINE-HEIGHT: 20px; COLOR: #333333; FONT-SIZE: 13px
+}
+.labelNomal {
+	LINE-HEIGHT: 20px; COLOR: #333333; FONT-SIZE: 13px
+}
+.labelBlueBond {
+	COLOR: #4169e1; FONT-SIZE: 8pt; FONT-WEIGHT: bold
+}
+.labelRed {
+	COLOR: #800000; FONT-SIZE: 8pt; FONT-WEIGHT: normal
+}
+.textBoxReadOnly {
+	BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; BACKGROUND-COLOR: #a8a8a8; WIDTH: 120px; HEIGHT: 22px; VERTICAL-ALIGN: bottom; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid
+}
+.textBoxReadOnlyRequired {
+	BORDER-BOTTOM: #7f9db9 2px solid; BORDER-LEFT: #7f9db9 2px solid; BACKGROUND-COLOR: #a8a8a8; WIDTH: 120px; HEIGHT: 22px; VERTICAL-ALIGN: bottom; BORDER-TOP: #7f9db9 2px solid; BORDER-RIGHT: #7f9db9 2px solid
+}
+.labelBlue {
+	COLOR: #4169e1; FONT-SIZE: 8pt; FONT-WEIGHT: normal
+}
+SELECT {
+	LINE-HEIGHT: 200%; HEIGHT: 22px; FONT-SIZE: 14px
+}
+OPTION {
+	LINE-HEIGHT: 200%; HEIGHT: 22px; FONT-SIZE: 14px
+}
+.inputText {
+	BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; BACKGROUND-COLOR: #ffffff; WIDTH: 120px; HEIGHT: 22px; VERTICAL-ALIGN: bottom; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid
+}
+.inputTextRequired {
+	BORDER-BOTTOM: #7f9db9 2px solid; BORDER-LEFT: #7f9db9 2px solid; BACKGROUND-COLOR: #ffffff; WIDTH: 120px; HEIGHT: 22px; VERTICAL-ALIGN: bottom; BORDER-TOP: #7f9db9 2px solid; BORDER-RIGHT: #7f9db9 2px solid
+}
+.textBoxRight {
+	BORDER-BOTTOM: steelblue 1px solid; TEXT-ALIGN: right; BORDER-LEFT: steelblue 1px solid; BACKGROUND-COLOR: #ffffff; HEIGHT: 20px; FONT-SIZE: 10pt; BORDER-TOP: steelblue 1px solid; BORDER-RIGHT: steelblue 1px solid
+}
+.textBoxReadOnlyRight {
+	BORDER-BOTTOM: steelblue 1px solid; TEXT-ALIGN: right; BORDER-LEFT: steelblue 1px solid; BACKGROUND-COLOR: #f5f5f5; HEIGHT: 20px; FONT-SIZE: 10pt; BORDER-TOP: steelblue 1px solid; BORDER-RIGHT: steelblue 1px solid
+}
+.MenuGlobleNormal {
+	TEXT-ALIGN: center; COLOR: white; FONT-SIZE: 8pt; PADDING-TOP: 3px
+}
+.MenuGlobleOnMouseOver {
+	TEXT-ALIGN: center; COLOR: lime; FONT-SIZE: 9pt; FONT-WEIGHT: bolder; PADDING-TOP: 3px
+}
+.fieldset_err {
+	BORDER-BOTTOM-COLOR: #f7f6f3; BORDER-TOP-COLOR: #f7f6f3; WIDTH: 300px; HEIGHT: 40px; BORDER-RIGHT-COLOR: #f7f6f3; FONT-SIZE: 11px; BORDER-LEFT-COLOR: #f7f6f3
+}
+.title {
+	BACKGROUND: url(../Image/004-1.jpg) #b0d0f3; COLOR: #3666aa; FONT-WEIGHT: bold
+}
+.gridtitle {
+	BACKGROUND: url(../Image/004-1.jpg) #b0d0f3; COLOR: #3666aa; FONT-WEIGHT: bold
+}
+.spacingtitle {
+	BACKGROUND: url(../Image/004-1.jpg) #b0d0f3; COLOR: #3666aa; FONT-WEIGHT: bold
+}
+TH {
+	BACKGROUND: url(../Image/004-1.jpg) #b0d0f3; COLOR: #3666aa; FONT-WEIGHT: bold
+}
+.gvPager {
+	TEXT-ALIGN: left; BACKGROUND-COLOR: #ffffff; COLOR: #c0c0c0; FONT-SIZE: 13px; FONT-WEIGHT: normal
+}
+.gvFooter {
+	BACKGROUND-COLOR: #5d7b9d; COLOR: #ffffff; FONT-SIZE: 13px; FONT-WEIGHT: normal
+}
+.gvRow {
+	BACKGROUND-COLOR: #f7f6f3; WORD-WRAP: break-word; HEIGHT: 20px; FONT-SIZE: 13px; WORD-BREAK: break-all; FONT-WEIGHT: normal
+}
+.gvAlternatingRow {
+	BACKGROUND-COLOR: #ffffff; WORD-WRAP: break-word; HEIGHT: 20px; FONT-SIZE: 13px; WORD-BREAK: break-all; FONT-WEIGHT: normal
+}
+.gvEditRow {
+	BACKGROUND-COLOR: #7c6f57; FONT-SIZE: 13px; FONT-WEIGHT: normal
+}
+.gvSelectedRow {
+	BACKGROUND-COLOR: #ccccff; COLOR: #333333; FONT-SIZE: 13px; FONT-WEIGHT: normal
+}
+.fieldset_err {
+	BORDER-BOTTOM: #000088 1px solid; BORDER-LEFT: #000088 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 4px; WIDTH: 300px; PADDING-RIGHT: 4px; MARGIN-BOTTOM: 2px; FLOAT: left; HEIGHT: 21px; COLOR: red; MARGIN-LEFT: 20px; BORDER-TOP: #000088 1px solid; BORDER-RIGHT: #000088 1px solid; PADDING-TOP: 0px
+}
+.errButton {
+	BACKGROUND-IMAGE: url(../Image/errorBtn_bg.gif); BORDER-BOTTOM: #004d99 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c0c0ff 1px solid; MARGIN: 0px 1px; WIDTH: 19px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 19px; BORDER-TOP: #c0c0ff 1px solid; CURSOR: pointer; BORDER-RIGHT: #004d99 1px solid
+}
+.otherErr {
+	Z-INDEX: 99; BORDER-BOTTOM: #0043b3 1px solid; POSITION: absolute; BORDER-LEFT: #0043b3 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #dfecf5; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; DISPLAY: none; FONT-SIZE: 8pt; OVERFLOW: hidden; BORDER-TOP: #0043b3 1px solid; BORDER-RIGHT: #0043b3 1px solid; PADDING-TOP: 5px
+}
+.chkBox {
+	LINE-HEIGHT: 20px; COLOR: #333333; FONT-SIZE: 13px
+}
+.chkBox TD {
+	HEIGHT: 20px
+}
+.chkBox INPUT {
+	MARGIN: 3px 5px 0px 0px; HEIGHT: 20px
+}
+.radioBtnNormal {
+	COLOR: #4169e1; FONT-SIZE: 13px
+}
+.confirmMessage {
+	FONT-SIZE: 15px; FONT-WEIGHT: bold
+}
+.buttonView {
+	BACKGROUND-IMAGE: url(../Image/searchBtn_bg.gif); BORDER-BOTTOM: #004d99 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c0c0ff 1px solid; LINE-HEIGHT: 1000px; MARGIN: 0px 1px; WIDTH: 20px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 20px; BORDER-TOP: #c0c0ff 1px solid; CURSOR: pointer; BORDER-RIGHT: #004d99 1px solid
+}
+.btnView {
+	BACKGROUND-IMAGE: url(../Image/searchBtn_bg.gif); BORDER-BOTTOM: #004d99 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c0c0ff 1px solid; LINE-HEIGHT: 1000px; MARGIN: 0px 1px; WIDTH: 20px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 20px; BORDER-TOP: #c0c0ff 1px solid; CURSOR: pointer; BORDER-RIGHT: #004d99 1px solid
+}
+.btnDate {
+	BACKGROUND-IMAGE: url(../Image/icon-calendar.gif); BORDER-BOTTOM: #004d99 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c0c0ff 1px solid; LINE-HEIGHT: 1000px; MARGIN: 0px 1px; WIDTH: 20px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 20px; BORDER-TOP: #c0c0ff 1px solid; CURSOR: pointer; BORDER-RIGHT: #004d99 1px solid
+}
+.inputdateTd {
+	FONT-FAMILY: "Tahoma"; FONT-SIZE: 12px
+}
+.inputdateTr {
+	FONT-FAMILY: "Tahoma"; FONT-SIZE: 12px
+}
+.dynamicMenu {
+	BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BACKGROUND-COLOR: #cccccc; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid
+}
+.dynamicMenuItem {
+	BORDER-BOTTOM: #6699ff 1px solid; BORDER-LEFT: #6699ff 1px solid; BACKGROUND-COLOR: #99ccff; FONT-SIZE: 15px; BORDER-TOP: #6699ff 1px solid; BORDER-RIGHT: #6699ff 1px solid
+}
+.column .table TD {
+	BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: left; BORDER-LEFT: black 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; EMPTY-CELLS: hide; HEIGHT: 20px; VERTICAL-ALIGN: middle; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; PADDING-TOP: 0px
+}
+.MsgStyle {
+	TEXT-ALIGN: left; COLOR: red; FONT-SIZE: 14px
+}
+.lnNormal {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; DISPLAY: block; BACKGROUND: url(../Image/tab.gif) no-repeat left top; FLOAT: left; HEIGHT: 25px; COLOR: #3366ff; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.lnHigh {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 25px; PADDING-RIGHT: 25px; DISPLAY: block; BACKGROUND: url(../Image/high_tab.gif) no-repeat left top; FLOAT: left; HEIGHT: 25px; COLOR: #3366ff; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+SELECT {
+	BORDER-BOTTOM: #c3c3c3 1px solid; BORDER-LEFT: #c3c3c3 1px solid; WIDTH: 120px; HEIGHT: 20px; BORDER-TOP: #c3c3c3 1px solid; BORDER-RIGHT: #c3c3c3 1px solid
+}
+.ddlBlack {
+	BORDER-BOTTOM: #c3c3c3 1px solid; BORDER-LEFT: #c3c3c3 1px solid; WIDTH: 120px; HEIGHT: 20px; BORDER-TOP: #c3c3c3 1px solid; BORDER-RIGHT: #c3c3c3 1px solid
+}
+.btnShort {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; LINE-HEIGHT: 20px; BACKGROUND: url(../Image/007.jpg) no-repeat; HEIGHT: 28px; COLOR: #ffffff; FONT-SIZE: 14px; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px
+}
+.btn {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; LINE-HEIGHT: 20px; WIDTH: 85px; BACKGROUND: url(../Image/005.jpg) no-repeat; HEIGHT: 28px; COLOR: #ffffff; FONT-SIZE: 14px; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px
+}
+.btnlong8 {
+	BORDER-BOTTOM: 1px; BORDER-LEFT: 1px; LINE-HEIGHT: 20px; WIDTH: 141px; BACKGROUND: url(../Image/010.png) no-repeat; HEIGHT: 28px; COLOR: #ffffff; FONT-SIZE: 14px; BORDER-TOP: 1px; CURSOR: pointer; BORDER-RIGHT: 1px
+}
+.btnlong6 {
+	BORDER-BOTTOM: 1px; BORDER-LEFT: 1px; LINE-HEIGHT: 20px; WIDTH: 99px; BACKGROUND: url(../Image/016.png) no-repeat; HEIGHT: 28px; COLOR: #ffffff; FONT-SIZE: 14px; BORDER-TOP: 1px; CURSOR: pointer; BORDER-RIGHT: 1px
+}
+.tbTitile {
+	POSITION: relative; LINE-HEIGHT: 28px; TEXT-INDENT: 15px; MARGIN-BOTTOM: -1px; BACKGROUND: url(../Image/003.jpg) no-repeat; HEIGHT: 26px; FONT-SIZE: 15px; OVERFLOW: hidden; FONT-WEIGHT: bold
+}
+.tbContent {
+	BORDER-BOTTOM: #a2cdef 1px solid; BORDER-LEFT: #a2cdef 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; WIDTH: 1160px; PADDING-RIGHT: 10px; BACKGROUND: #ddf0fe 0px 0px; BORDER-TOP: #a2cdef 1px solid; BORDER-RIGHT: #a2cdef 1px solid; PADDING-TOP: 10px
+}
+.btnContent {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; WIDTH: 1160px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.gvContent {
+	BORDER-BOTTOM: #a2cdef 1px solid; POSITION: relative; BORDER-LEFT: #a2cdef 1px solid; MARGIN: 0px; WIDTH: 1160px; OVERFLOW: hidden; BORDER-TOP: #a2cdef 1px solid; BORDER-RIGHT: #a2cdef 1px solid
+}
+.gvContentN {
+	POSITION: relative; WIDTH: 100%
+}
+.InfobtnContent {
+	WIDTH: 1160px; PADDING-RIGHT: 23px
+}
+.inputTd {
+	WIDTH: 170px
+}
+.selectTd {
+	WIDTH: 170px
+}
+.timeTable {
+	MARGIN-TOP: 5px; MARGIN-BOTTOM: 5px; MARGIN-LEFT: 5px
+}
+.divScrollbar3D {
+	BACKGROUND-COLOR: transparent; WIDTH: 1120px; OVERFLOW: auto
+}
+.gvHeader {
+	Z-INDEX: 10; BORDER-BOTTOM: #ffffff 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ffffff 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; BACKGROUND: url(../Image/004-1.jpg) #aca899; TABLE-LAYOUT: fixed; HEIGHT: 25px; COLOR: #0063ad; FONT-SIZE: 13px; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #ffffff 1px solid; PADDING-TOP: 0px
+}
+.repeatHead {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #5d7b9d; HEIGHT: 20px; COLOR: #ffffff; FONT-SIZE: 13px; FONT-WEIGHT: normal
+}
+.gvDataTable {
+	BORDER-TOP: 0px
+}
+.gvHeaderTable {
+	BORDER-BOTTOM: 0px
+}
+.gvHeader TH {
+	
+}
+.gvCalendarHeader {
+	Z-INDEX: 10; BORDER-BOTTOM: #ffffff 1px solid; POSITION: relative; TEXT-ALIGN: center; BORDER-LEFT: #ffffff 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #aca899; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; TABLE-LAYOUT: fixed; HEIGHT: 35px; COLOR: #0063ad; FONT-SIZE: 13px; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #ffffff 1px solid; PADDING-TOP: 2px; TOP: 2px
+}
+.gvRCalendarHeader {
+	Z-INDEX: 10; BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #aca899; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; TABLE-LAYOUT: fixed; HEIGHT: 35px; COLOR: #0063ad; FONT-SIZE: 13px; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #ffffff 1px solid; PADDING-TOP: 2px; TOP: 2px
+}
+.gvCalendarRow {
+	HEIGHT: 20px; FONT-SIZE: 13px; FONT-WEIGHT: normal
+}
+.gvCalendar {
+	BORDER-LEFT: #aca899 1px solid; BORDER-TOP: #aca899 1px solid
+}
+.gvFix_Header {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.gvFix_Data {
+	WIDTH: 100%; OVERFLOW: auto
+}
+
+#btnLogin {
+    display: block;
+    margin: 10px auto 0;
+    width: 100%;
+    height: 60px;
+    color: #000;
+    background: #C0C0C0;
+    border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	-o-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	-ms-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+#btnLogin:hover {
+	background: #808080;
+}
