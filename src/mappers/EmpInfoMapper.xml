@@ -223,4 +223,49 @@
 	,sysdate()
 	)
   </insert>
+  
+  <insert id="insertEmpTech" parameterType="com.masago.bean.EmpTechBean">
+    insert into emp_tech (EMP_ID, DOS, WINDOWS, 
+      UNIX, LINUX, ANDROID, IOS, 
+      MAC, WINCE, OS_TRON, SYMBIAN, 
+      CYGWIN, BREW, NETWARE, VB, 
+      VBNET, ASP, VCPLUS, UML, 
+      PERL, C, UNIX_SHELL, PLSQL, 
+      POWERBUILDER, DELPHI, PYTHON, 
+      JAVA, SERVLET, JSP, HIBERNATE_JPA, 
+      STRUTS, NETFRAMEWORK, CSHARP, 
+      HTML, PROC, AJAX, FLEX, 
+      INTRA_MART, PHP, CPLUS, `SQL`, 
+      SAP_ABAP, MATLAB, MATHEMATICA, 
+      COBOL, JAVASCRIPT, XML, ASSEMBLER, 
+      JUSTWARE, ACCESS, ORACLE, SQLSERVER, 
+      DB2, SYBASE, INFORMIX, POSTGRESQL, 
+      MYSQL, HIRDB, SYMFOWARE, WEBLOGIC, 
+      APACHE, TOMCAT, VISUAL_STUDIO, 
+      ECLIPSE, RD, DESIGN, PG, 
+      BUG_FIX, TEST, MAINTENANCE, CREATER, 
+      CREATE_DATE, UPDATER, UPDATE_DATE
+      )
+    values (#{empId,jdbcType=CHAR}, #{dos,jdbcType=CHAR}, #{windows,jdbcType=CHAR}, 
+      #{unix,jdbcType=CHAR}, #{linux,jdbcType=CHAR}, #{android,jdbcType=CHAR}, #{ios,jdbcType=CHAR}, 
+      #{mac,jdbcType=CHAR}, #{wince,jdbcType=CHAR}, #{osTron,jdbcType=CHAR}, #{symbian,jdbcType=CHAR}, 
+      #{cygwin,jdbcType=CHAR}, #{brew,jdbcType=CHAR}, #{netware,jdbcType=CHAR}, #{vb,jdbcType=CHAR}, 
+      #{vbnet,jdbcType=CHAR}, #{asp,jdbcType=CHAR}, #{vcplus,jdbcType=CHAR}, #{uml,jdbcType=CHAR}, 
+      #{perl,jdbcType=CHAR}, #{c,jdbcType=CHAR}, #{unixShell,jdbcType=CHAR}, #{plsql,jdbcType=CHAR}, 
+      #{powerbuilder,jdbcType=CHAR}, #{delphi,jdbcType=CHAR}, #{python,jdbcType=CHAR}, 
+      #{java,jdbcType=CHAR}, #{servlet,jdbcType=CHAR}, #{jsp,jdbcType=CHAR}, #{hibernateJpa,jdbcType=CHAR}, 
+      #{struts,jdbcType=CHAR}, #{netframework,jdbcType=CHAR}, #{csharp,jdbcType=CHAR}, 
+      #{html,jdbcType=CHAR}, #{proc,jdbcType=CHAR}, #{ajax,jdbcType=CHAR}, #{flex,jdbcType=CHAR}, 
+      #{intraMart,jdbcType=CHAR}, #{php,jdbcType=CHAR}, #{cplus,jdbcType=CHAR}, #{sql,jdbcType=CHAR}, 
+      #{sapAbap,jdbcType=CHAR}, #{matlab,jdbcType=CHAR}, #{mathematica,jdbcType=CHAR}, 
+      #{cobol,jdbcType=CHAR}, #{javascript,jdbcType=CHAR}, #{xml,jdbcType=CHAR}, #{assembler,jdbcType=CHAR}, 
+      #{justware,jdbcType=CHAR}, #{access,jdbcType=CHAR}, #{oracle,jdbcType=CHAR}, #{sqlserver,jdbcType=CHAR}, 
+      #{db2,jdbcType=CHAR}, #{sybase,jdbcType=CHAR}, #{informix,jdbcType=CHAR}, #{postgresql,jdbcType=CHAR}, 
+      #{mysql,jdbcType=CHAR}, #{hirdb,jdbcType=CHAR}, #{symfoware,jdbcType=CHAR}, #{weblogic,jdbcType=CHAR}, 
+      #{apache,jdbcType=CHAR}, #{tomcat,jdbcType=CHAR}, #{visualStudio,jdbcType=CHAR}, 
+      #{eclipse,jdbcType=CHAR}, #{rd,jdbcType=CHAR}, #{design,jdbcType=CHAR}, #{pg,jdbcType=CHAR}, 
+      #{bugFix,jdbcType=CHAR}, #{test,jdbcType=CHAR}, #{maintenance,jdbcType=CHAR}, 'tang', 
+      sysdate(), 'tang', sysdate()
+      )
+  </insert>
 </mapper>

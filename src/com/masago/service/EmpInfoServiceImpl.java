@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.masago.bean.EmpBaseBean;
+import com.masago.bean.EmpTechBean;
 import com.masago.mapper.EmpInfoMapper;
-import com.masago.service.EmpInfoService;
 
 @Transactional(propagation=Propagation.REQUIRED,isolation=Isolation.DEFAULT)
 @Service("EmpInfoService")
@@ -40,8 +40,15 @@ public class EmpInfoServiceImpl implements EmpInfoService{    //表示service层
      * 
      */
     @Transactional
-    public void setEmpBase(EmpBaseBean empBaseBean) {
+    public void addEmpBase(EmpBaseBean empBaseBean) {
     	empInfomapper.insertEmpBase(empBaseBean);
+    }
+    /**
+     * 
+     */
+    @Transactional
+    public void addEmpTech(EmpTechBean empTechBean) {
+    	empInfomapper.insertEmpTech(empTechBean);
     }
 
 }

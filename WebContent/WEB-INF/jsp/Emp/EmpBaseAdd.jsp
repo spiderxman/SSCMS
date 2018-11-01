@@ -82,6 +82,20 @@ function userIdExists() {
         }
     });
 }
+
+$(function() {
+    $("#birthday").datepicker({
+    	dateFormat : 'yy/mm/dd',
+    	monthNames : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+    	dayNamesMin : ['月','火','水','木','金','土','日'],
+    	showButtonPanel: true,
+    	changeMonth : true,
+    	monthNamesShort : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+    	changeYear : true,
+    	showOtherMonths : true,
+    	currentText : 'Today'
+    });
+  });
 </script>
 
 <style>
@@ -94,6 +108,9 @@ function userIdExists() {
       background-color: #eee;
       z-index: 9999;
       opacity:0.8;
+    }
+    #tbl_tech .btn.btn-primary{
+    	width: 50px;
     }
 </style>
 </head>
@@ -121,65 +138,71 @@ function userIdExists() {
             </td>
         </tr>
         <tr>
-            <td style="width: 220px">社員名称（姓）*
+            <td style="width: 220px">社員名称（姓）
             <input style="width: 120px" id="empBaseBean.empFirstName"
-                class=inputText name="empBaseBean.empFirstName" maxLength=20 placeholder="例）abc"/></td>
-            <td style="width: 220px">社員名称（名）*
+                class=inputText name="empBaseBean.empFirstName" maxLength=20 placeholder="例）abc"/>*</td>
+            <td style="width: 220px">社員名称（名）
             <input style="width: 120px" id="empBaseBean.empLastName"
-                class=inputText name="empBaseBean.empLastName" maxLength=20 placeholder="例）abc"/></td>
+                class=inputText name="empBaseBean.empLastName" maxLength=20 placeholder="例）abc"/>*</td>
         </tr>
         <tr>
-            <td style="width: 220px">社員名称カタカナ*
+            <td style="width: 220px">社員名称カタカナ
             <input style="width: 120px" id="empBaseBean.empNameKana"
-                class=inputText name="empBaseBean.empNameKana" maxLength=20/></td>
-            <td style="width: 220px">社員名称（略）*
+                class=inputText name="empBaseBean.empNameKana" maxLength=20/>*</td>
+            <td style="width: 220px">社員名称（略）
             <input style="width: 120px" id="empBaseBean.empNickName"
-                class=inputText name="empBaseBean.empNickName" maxLength=20/></td>
+                class=inputText name="empBaseBean.empNickName" maxLength=20/>*</td>
         </tr>
-        <tr>
-            <td style="width: 170px"><SPAN >パスワード*</SPAN>
+<!--         <tr>
+            <td style="width: 170px"><SPAN >パスワード</SPAN>
             <input style="width: 120px" id="empBaseBean.password"
-                class=inputText name="empBaseBean.password" maxLength=20 type=password autocomplete="new-password"/>
+                class=inputText name="empBaseBean.password" maxLength=20 type=password autocomplete="new-password"/>*
             </td>
             <br>
-            <td style="width: 170px"><SPAN>パスワード確認*</SPAN>
+            <td style="width: 170px"><SPAN>パスワード確認</SPAN>
             <input style="width: 120px" id="empBaseBean.rPassword"
-                class=inputText name="empBaseBean.rPassword" maxLength=20 type=password autocomplete="new-password"/>
+                class=inputText name="empBaseBean.rPassword" maxLength=20 type=password autocomplete="new-password"/>*
             </td>
-        </tr>
+        </tr> -->
         <tr>
-            <td style="width: 170px"><SPAN>権限*</SPAN>
+            <td style="width: 170px"><SPAN>権限</SPAN>
             <select id="empBaseBean.authority" class=ddlBlack name="empBaseBean.authority">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${authorityCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select>
+            </select>*
             </td>
         </tr>
         <tr>
         	<td>性別*</td>
         	<td>
-        	<label><input type="radio" name="empBaseBean.sex" checked="checked" value="1"/>男</label>
-        	<label><input type="radio" name="empBaseBean.sex" value="0"/>女</label>
+        		<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empBaseBean.sex" checked="checked" value="1"/>男
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empBaseBean.sex" value="0"/>女
+            		</label>
+            	</div>
         	</td>
         </tr>
         <tr>
-        	<td>生年月日*</td>
+        	<td>生年月日</td>
         	<td>
-        	<input type="text" name="empBaseBean.birthday"/>
+        	<input type="text" id="birthday" name="empBaseBean.birthday"/>*
         	</td>
         </tr>
         <tr>
-        	<td>国籍／出身*</td>
+        	<td>国籍／出身</td>
         	<td>
-        	<input type="text" name="empBaseBean.country"/>
+        	<input type="text" name="empBaseBean.country"/>*
         	</td>
         </tr>
         <tr>
-        	<td>現住所*</td>
+        	<td>現住所</td>
         	<td>
-        	<input type="text" name="empBaseBean.address"/>
+        	<input type="text" name="empBaseBean.address"/>*
         	</td>
         </tr>
         <tr>
@@ -228,13 +251,13 @@ function userIdExists() {
         	</td>
         </tr>
         <tr>
-        	<td>在留資格*</td>
+        	<td>在留資格</td>
         	<td><select id="empBaseBean.immigrationStatus" class=ddlBlack name="empBaseBean.immigrationStatus">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${immigrationStatusCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select></td>
+            </select>*</td>
         </tr>
         <tr>
         	<td>外語１</td>
@@ -263,13 +286,13 @@ function userIdExists() {
         	</td>
         </tr>
         <tr>
-        	<td>社員種別*</td>
+        	<td>社員種別</td>
         	<td><select id="empBaseBean.employeeType" class=ddlBlack name="empBaseBean.employeeType">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${employeeTypeCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select></td>
+            </select>*</td>
         </tr>
         <tr>
         	<td>社内役割</td>
@@ -281,97 +304,247 @@ function userIdExists() {
             </select></td>
         </tr>
         <tr>
-        	<td>仕事状態*</td>
+        	<td>仕事状態</td>
         	<td><select id="empBaseBean.workingStatus" class=ddlBlack name="empBaseBean.workingStatus">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${workingStatusCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select></td>
+            </select>*</td>
         </tr>
         <tr>
-        	<td>会社契約開始日</td>
+        	<td>会社契約期間</td>
         	<td>
-        	<input type="text" name="empBaseBean.companyStartDate" maxLength=8/>
+        	<input type="text" name="empBaseBean.companyStartDate" maxLength=8/>～
         	</td>
-        </tr>
-        <tr>
-        	<td>会社契約終了日</td>
         	<td>
         	<input type="text" name="empBaseBean.companyEndDate" maxLength=8/>
         	</td>
         </tr>
+
         <tr>
         	<td>現場請求先</td>
         	<td>
         	<input type="text" name="empBaseBean.officeName" maxLength=200/>
         	</td>
-        </tr>
-        <tr>
         	<td>現場アドレス</td>
         	<td>
         	<input type="text" name="empBaseBean.officeAddress" maxLength=200/>
         	</td>
         </tr>
         <tr>
-        	<td>現場契約開始日</td>
+        	<td>現場契約期間</td>
         	<td>
-        	<input type="text" name="empBaseBean.officeStartDate" maxLength=8/>
+        	<input type="text" name="empBaseBean.officeStartDate" maxLength=8/>～
         	</td>
-        </tr>
-        <tr>
-        	<td>現場契約終了日</td>
         	<td>
         	<input type="text" name="empBaseBean.officeEndDate" maxLength=8/>
         	</td>
         </tr>
-
-
     </tbody>
 </table>
 </fieldset>
 
 <fieldset><legend>技術経験 </legend>
-<table style="padding-left: 10px; width: 100%" border=0 cellSpacing=0 cellPadding=0>
+<table style="padding-left: 10px; width: 100%" border=0 cellSpacing=0 cellPadding=0 id="tbl_tech">
     <tbody>
         <tr>
-            <td style="width: 170px">DOS
-            	<label><input type="radio" name="rdoDos" checked="checked" value="0"/>無</label>
-            	<label><input type="radio" name="rdoDos" value="1"/>△</label>
-            	<label><input type="radio" name="rdoDos" value="2"/>〇</label>
-            	<label><input type="radio" name="rdoDos" value="3"/>◎</label>
+            <td style="width: 25%">
+            	DOS<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.dos" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.dos" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.dos" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.dos" value="3"/>◎
+            		</label>
+            	</div>
             </td>
-            <td style="width: 170px">Windows系
-            	<label><input type="radio" name="rdoWindows" checked="checked" value="0"/>無</label>
-            	<label><input type="radio" name="rdoWindows" value="1"/>△</label>
-            	<label><input type="radio" name="rdoWindows" value="2"/>〇</label>
-            	<label><input type="radio" name="rdoWindows" value="3"/>◎</label>
+            <td style="width: 25%">
+            	Windows系<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.windows" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.windows" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.windows" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.windows" value="3"/>◎
+            		</label>
+            	</div>
             </td>
-            <td style="width: 170px">Android
-            	<label><input type="radio" name="rdoAndroid" checked="checked" value="0"/>無</label>
-            	<label><input type="radio" name="rdoAndroid" value="1"/>△</label>
-            	<label><input type="radio" name="rdoAndroid" value="2"/>〇</label>
-            	<label><input type="radio" name="rdoAndroid" value="3"/>◎</label>
+            <td style="width: 25%">Android
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.android" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.android" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.android" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.android" value="3"/>◎
+            		</label>
+            	</div>
             </td>
-            <td style="width: 170px">WinCE
-            	<label><input type="radio" name="rdoWinCE" checked="checked" value="0"/>無</label>
-            	<label><input type="radio" name="rdoWinCE" value="1"/>△</label>
-            	<label><input type="radio" name="rdoWinCE" value="2"/>〇</label>
-            	<label><input type="radio" name="rdoWinCE" value="3"/>◎</label>
+            <td style="width: 25%">WinCE
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.wince" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.wince" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.wince" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.wince" value="3"/>◎
+            		</label>
+            	</div>
             </td>
-            <td style="width: 170px">Symbian
-            	<label><input type="radio" name="rdoSymbian" checked="checked" value="0"/>無</label>
-            	<label><input type="radio" name="rdoSymbian" value="1"/>△</label>
-            	<label><input type="radio" name="rdoSymbian" value="2"/>〇</label>
-            	<label><input type="radio" name="rdoSymbian" value="3"/>◎</label>
+        </tr>
+        <tr>
+            <td style="width: 25%">Symbian
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.symbian" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.symbian" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.symbian" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.symbian" value="3"/>◎
+            		</label>
+            	</div>
             </td>
-            <td style="width: 170px">Brew
-            	<label><input type="radio" name="rdoBrew" checked="checked" value="0"/>無</label>
-            	<label><input type="radio" name="rdoBrew" value="1"/>△</label>
-            	<label><input type="radio" name="rdoBrew" value="2"/>〇</label>
-            	<label><input type="radio" name="rdoBrew" value="3"/>◎</label>
+            <td style="width: 25%">Brew
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.brew" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.brew" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.brew" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.brew" value="3"/>◎
+            		</label>
+            	</div>
             </td>
-            
+            <td style="width: 25%">Unix
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.unix" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.unix" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.unix" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.unix" value="3"/>◎
+            		</label>
+            	</div>
+            </td>
+            <td style="width: 25%">Linux
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.linux" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.linux" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.linux" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.linux" value="3"/>◎
+            		</label>
+            	</div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 25%">Mac
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.mac" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.mac" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.mac" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.mac" value="3"/>◎
+            		</label>
+            	</div>
+            </td>
+            <td style="width: 25%">ﾘｱﾙﾀｲﾑOS TRON
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.osTron" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.osTron" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.osTron" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.osTron" value="3"/>◎
+            		</label>
+            	</div>
+            </td>
+            <td style="width: 25%">Cygwin
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.cygwin" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.cygwin" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.cygwin" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.cygwin" value="3"/>◎
+            		</label>
+            	</div>
+            </td>
+            <td style="width: 25%">Netware
+            	<div class="btn-group" data-toggle="buttons">
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.netware" checked="checked" value="0"/>無
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.netware" value="1"/>△
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.netware" value="2"/>〇
+            		</label>
+            		<label class="btn btn-primary">
+            			<input type="radio" name="empTechBean.netware" value="3"/>◎
+            		</label>
+            	</div>
+            </td>
         </tr>
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="OFF" monitorInterval="1800">
     <properties>
-        <property name="LOG_HOME">./log</property>
+        <property name="LOG_HOME">./workspace/SSCMS/log</property>
         <property name="FILE_NAME">SSCMS</property>
     </properties>
 
@@ -28,9 +28,9 @@
 		<AppenderRef ref="running-log" /> </Logger> -->
 
 	<Root level="info">
-		<!-- 这里是输入到文件，很重要 -->
+		<!-- output to log File -->
 		<AppenderRef ref="running-log" />
-		<!-- 这里是输入到控制台 -->
+		<!-- print out to Console -->
 		<AppenderRef ref="Console" />
 	</Root>
     </Loggers>

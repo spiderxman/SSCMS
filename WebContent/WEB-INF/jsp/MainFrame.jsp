@@ -43,9 +43,15 @@
     <frame src="" name="main_page" noresize frameborder="1" scrolling="yes">
   </frameset>
 </frameset> --%>
+  <div style="height:50px">
+    <jsp:include page="./TopBar.jsp"/>
+  </div>
   <div>
-    <iframe id="iframeTop" name="iframeTop" src="<%=request.getContextPath() %>/TopBar" scrolling="no"></iframe>
-    <iframe id="iframeLeft" name="iframeLeft" src="<%=request.getContextPath() %>/LeftMenu" scrolling="yes" style="border:medium double #000000"></iframe>
+    <%-- <iframe id="iframeTop" name="iframeTop" src="<%=request.getContextPath() %>/TopBar" scrolling="no"></iframe> --%>
+    <%-- <iframe id="iframeLeft" name="iframeLeft" src="<%=request.getContextPath() %>/LeftMenu" scrolling="yes" style="border:medium double #000000"></iframe> --%>
+    <div style="float:left;width:13%;height:99%;">
+      <jsp:include page="./LeftMenu.jsp"/>
+    </div>
     <iframe id="iframeContent" name="iframeContent" src="<%=request.getContextPath() %>/Main" frameborder="1" scrolling="yes" onload="changeFrameHeight()" ></iframe>
   </div>
 </body>

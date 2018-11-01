@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.masago.bean.EmpBaseBean;
+import com.masago.bean.EmpTechBean;
 import com.masago.bean.MstCodeBean;
 import com.masago.service.EmpInfoService;
 import com.masago.service.MstCodeService;
@@ -73,6 +74,11 @@ public class EmpInfoController {
     public void empBaseBeanBinder(WebDataBinder webDataBinder) {
     	webDataBinder.setFieldDefaultPrefix("empBaseBean.");
     }
+    
+    @InitBinder("empTechBean")
+    public void empTechBeanBinder(WebDataBinder webDataBinder) {
+    	webDataBinder.setFieldDefaultPrefix("empTechBean.");
+    }
     /**
      * 社員情報登録
      * @param empInfoAdd
@@ -80,10 +86,14 @@ public class EmpInfoController {
      * @return
      */
     @RequestMapping("/EmpBaseAdd")
-    public String empBaseAdd(EmpBaseBean empBaseBean, Model mv){
+    public String empBaseAdd(EmpBaseBean empBaseBean, EmpTechBean empTechBean, Model mv){
     	empBaseBean.setHisNo(1);
     	empBaseBean.setDelFlg("0");
-    	empInfoService.setEmpBase(empBaseBean);
+    	empBaseBean.setBirthday(empBaseBean.getBirthday().replace("/", ""));
+    	empInfoService.addEmpBase(empBaseBean);
+    	
+    	empTechBean.setEmpId(empBaseBean.getEmpId());
+    	empInfoService.addEmpTech(empTechBean);
 //    	mv.addAttribute("errorMessage", PropertiesFileLoader.getProperty("MSG_E003"));
         return "redirect:/EmpBaseAddInit";
     }
