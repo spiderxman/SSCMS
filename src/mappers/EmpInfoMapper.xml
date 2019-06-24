@@ -85,26 +85,34 @@
   </sql>
   <sql id="searchBy">
   	<trim prefix="where" prefixOverrides="and|or">
-  		AND empBase.HIS_NO = (SELECT MAX(HIS_NO) FROM EMP_BASE WHERE EMP_BASE.EMP_ID = #{empId, jdbcType=VARCHAR} AND DEL_FLG='0' GROUP BY EMP_BASE.EMP_ID)
+  		AND empBase.HIS_NO IN (
+  		SELECT MAX(HIS_NO)
+  	    FROM EMP_BASE
+  	    <include refid="searchBy2"/>
+  	    GROUP BY EMP_BASE.EMP_ID)
   		<if test="empId != '' and empId != null">
   			AND empBase.EMP_ID = #{empId, jdbcType=VARCHAR}
   		</if>
-   		<if test="userName != '' and userName != null">
-   		    AND 1 = 1
-   		<!--
-  			AND user.user_name like CONCAT('%',#{userName, jdbcType=VARCHAR},'%')
-  			-->
+   		<if test="empName != '' and empName != null">
+  			AND CONCAT(empBase.EMP_FIRST_NAME, empBase.EMP_LAST_NAME) like '%'||#{empName, jdbcType=VARCHAR}||'%'
   		</if>
 
-  		<if test="authority != '' and authority != null">
-  			AND empBase.AUTHORITY = #{authority, jdbcType=VARCHAR}
+  		<if test="workingStatus != '' and workingStatus != null">
+  			AND empBase.WORKING_STATUS = #{workingStatus, jdbcType=VARCHAR}
   		</if>
    		<if test="delFlag != '' and delFlag != null">
    		    AND 1 = 1
 <!--  		AND user.del_flg = #{delFlag, jdbcType=VARCHAR}
 -->
   		</if>
-
+  	</trim>
+  </sql>
+  <sql id="searchBy2">
+  	<trim prefix="where" prefixOverrides="and|or">
+  	    DEL_FLG='0'
+  		<if test="empId != '' and empId != null">
+  			AND EMP_BASE.EMP_ID = #{empId, jdbcType=VARCHAR}
+  		</if>
   	</trim>
   </sql>
   <select id="selectEmpInfo" resultMap="empBaseResultMap">

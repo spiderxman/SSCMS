@@ -109,7 +109,7 @@ $(function() {
       z-index: 9999;
       opacity:0.8;
     }
-    #tbl_tech .btn.btn-primary{
+    #divTech .btn.btn-primary{
     	width: 50px;
     }
 </style>
@@ -118,7 +118,7 @@ $(function() {
 <form id="empInfoAddForm" style="text-align: center" method=post action="EmpBaseAdd" autocomplete="off">
 <div style="width: 100%; height: 30px">
 <DIV
-    style="BACKGROUND-IMAGE: url(./Image/006.jpg); text-align: left; MARGIN-TOP: 20px; TEXT-INDENT: 20px; width: 100%; BACKGROUND-REPEAT: no-repeat; FLOAT: left; height: 28px"><SPAN
+    style="BACKGROUND-IMAGE: url(./Image/006.jpg); text-align: left; MARGIN-TOP: 0px; TEXT-INDENT: 20px; width: 100%; BACKGROUND-REPEAT: no-repeat; FLOAT: left; height: 28px"><SPAN
     id=ctl00_lbltitle class=title>社員情報登録</SPAN></div>
 </div>
 <div style="text-align: left; width: 1158px">
@@ -128,32 +128,27 @@ $(function() {
 <!-- <a class="btn btn-default" href="javascript:void(0);" role="button" onclick="pullBack();">戻る</a> -->
 </div>
 <div style="width: 100%" id=ctl00_mainContent_BaseInfo class=panelGrid>
-<fieldset><legend>基本情報 </LEGEND>
-<table style="padding-left: 10px; width: 100%" border=0 cellSpacing=0 cellPadding=0>
-    <tbody>
-        <tr>
-            <td style="width: 170px">社員ID
-            	<label>${empId}</label>
-            	<input type="hidden" id="empBaseBean.empId" name="empBaseBean.empId" value="${empId}">
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 220px">社員名称（姓）
+<fieldset><legend>基本情報 </legend>
+    <div>社員ID
+         <label>${empId}</label>
+         <input type="hidden" id="empBaseBean.empId" name="empBaseBean.empId" value="${empId}">
+    </div>
+    <div>社員名称（姓）
             <input style="width: 120px" id="empBaseBean.empFirstName"
-                class=inputText name="empBaseBean.empFirstName" maxLength=20 placeholder="例）abc"/>*</td>
-            <td style="width: 220px">社員名称（名）
+                class=inputText name="empBaseBean.empFirstName" maxLength=20 placeholder="例）abc"/>*
+                    社員名称（名）
             <input style="width: 120px" id="empBaseBean.empLastName"
-                class=inputText name="empBaseBean.empLastName" maxLength=20 placeholder="例）abc"/>*</td>
-        </tr>
-        <tr>
-            <td style="width: 220px">社員名称カタカナ
+                class=inputText name="empBaseBean.empLastName" maxLength=20 placeholder="例）abc"/>*
+    </div>
+    <div>
+         社員名称カタカナ
             <input style="width: 120px" id="empBaseBean.empNameKana"
-                class=inputText name="empBaseBean.empNameKana" maxLength=20/>*</td>
-            <td style="width: 220px">社員名称（略）
+                class=inputText name="empBaseBean.empNameKana" maxLength=20/>*
+     社員名称（略）
             <input style="width: 120px" id="empBaseBean.empNickName"
-                class=inputText name="empBaseBean.empNickName" maxLength=20/>*</td>
-        </tr>
-<!--         <tr>
+                class=inputText name="empBaseBean.empNickName" maxLength=20/>*
+    </div>
+         <tr>
             <td style="width: 170px"><SPAN >パスワード</SPAN>
             <input style="width: 120px" id="empBaseBean.password"
                 class=inputText name="empBaseBean.password" maxLength=20 type=password autocomplete="new-password"/>*
@@ -163,193 +158,147 @@ $(function() {
             <input style="width: 120px" id="empBaseBean.rPassword"
                 class=inputText name="empBaseBean.rPassword" maxLength=20 type=password autocomplete="new-password"/>*
             </td>
-        </tr> -->
-        <tr>
-            <td style="width: 170px"><SPAN>権限</SPAN>
+        </tr><!-- -->
+        <div>
+            <span>権限</span>
             <select id="empBaseBean.authority" class=ddlBlack name="empBaseBean.authority">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${authorityCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
             </select>*
-            </td>
-        </tr>
-        <tr>
-        	<td>性別*</td>
-        	<td>
-        		<div class="btn-group" data-toggle="buttons">
-            		<label class="btn btn-primary">
-            			<input type="radio" name="empBaseBean.sex" checked="checked" value="1"/>男
-            		</label>
-            		<label class="btn btn-primary">
-            			<input type="radio" name="empBaseBean.sex" value="0"/>女
-            		</label>
-            	</div>
-        	</td>
-        </tr>
-        <tr>
-        	<td>生年月日</td>
-        	<td>
+        </div>
+        <div>
+        	性別*
+        	<div class="btn-group" data-toggle="buttons">
+            	<label class="btn btn-primary">
+            		<input type="radio" name="empBaseBean.sex" checked="checked" value="1"/>男
+            	</label>
+            	<label class="btn btn-primary">
+            		<input type="radio" name="empBaseBean.sex" value="0"/>女
+            	</label>
+            </div>
+        </div>
+        <div>
+        	生年月日
         	<input type="text" id="birthday" name="empBaseBean.birthday"/>*
-        	</td>
-        </tr>
-        <tr>
-        	<td>国籍／出身</td>
-        	<td>
+        </div>
+        <div>
+        	国籍／出身
         	<input type="text" name="empBaseBean.country"/>*
-        	</td>
-        </tr>
-        <tr>
-        	<td>現住所</td>
-        	<td>
+        </div>
+        <div>
+        	現住所
         	<input type="text" name="empBaseBean.address"/>*
-        	</td>
-        </tr>
-        <tr>
-        	<td>最寄駅</td>
-        	<td>
+        </div>
+        <div>
+        	最寄駅
         	<input type="text" name="empBaseBean.station"/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>電話番号</td>
-        	<td>
+        </div>
+        <div>
+        	電話番号
         	<input type="text" name="empBaseBean.tel" maxLength=15/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>メールアドレス</td>
-        	<td>
+        </div>
+        <div>
+        	メールアドレス
         	<input type="text" name="empBaseBean.mail" maxLength=50/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>最終学校</td>
-        	<td>
+        </div>
+        <div>
+        	最終学校
         	<input type="text" name="empBaseBean.school" maxLength=50/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>最終学歴</td>
-        	<td><select id="empBaseBean.education" class=ddlBlack name="empBaseBean.education">
+        </div>
+        <div>
+        	最終学歴
+        	<select id="empBaseBean.education" class=ddlBlack name="empBaseBean.education">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${educationCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select></td>
-        </tr>
-        <tr>
-        	<td>専門</td>
-        	<td>
+            </select>
+        </div>
+        <div>
+        	専門
         	<input type="text" name="empBaseBean.major" maxLength=30/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>卒業年月</td>
-        	<td>
+        </div>
+        <div>
+        	卒業年月
         	<input type="text" name="empBaseBean.graduateDate" maxLength=8/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>在留資格</td>
-        	<td><select id="empBaseBean.immigrationStatus" class=ddlBlack name="empBaseBean.immigrationStatus">
+        </div>
+        <div>
+        	在留資格
+        	<select id="empBaseBean.immigrationStatus" class=ddlBlack name="empBaseBean.immigrationStatus">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${immigrationStatusCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select>*</td>
-        </tr>
-        <tr>
-        	<td>外語１</td>
-        	<td>
+            </select>*
+        </div>
+        <div>
+        	外語１
         	<input type="text" name="empBaseBean.language1" maxLength=20/>
-        	</td>
-        	<td>レベル１</td>
-        	<td>
+        	レベル１
         	<input type="text" name="empBaseBean.level1" maxLength=20/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>外語２</td>
-        	<td>
+        </div>
+        <div>
+        	外語２
         	<input type="text" name="empBaseBean.language2" maxLength=20/>
-        	</td>
-        	<td>レベル２</td>
-        	<td>
+        	レベル２
         	<input type="text" name="empBaseBean.level2" maxLength=20/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>技術資格証明書</td>
-        	<td>
+        </div>
+        <div>
+        	技術資格証明書
         	<input type="text" name="empBaseBean.certificate" maxLength=20/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>社員種別</td>
-        	<td><select id="empBaseBean.employeeType" class=ddlBlack name="empBaseBean.employeeType">
+        </div>
+        <div>
+        	社員種別
+        	<select id="empBaseBean.employeeType" class=ddlBlack name="empBaseBean.employeeType">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${employeeTypeCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select>*</td>
-        </tr>
-        <tr>
-        	<td>社内役割</td>
-        	<td><select id="empBaseBean.position" class=ddlBlack name="empBaseBean.position">
+            </select>*
+        </div>
+        <div>
+        	社内役割
+        	<select id="empBaseBean.position" class=ddlBlack name="empBaseBean.position">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${positionCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select></td>
-        </tr>
-        <tr>
-        	<td>仕事状態</td>
-        	<td><select id="empBaseBean.workingStatus" class=ddlBlack name="empBaseBean.workingStatus">
+            </select>
+        </div>
+        <div>
+        	仕事状態
+        	<select id="empBaseBean.workingStatus" class=ddlBlack name="empBaseBean.workingStatus">
                 <option selected value=""></option>
 				<c:forEach var="item" items="${workingStatusCodeList}">
 					<option value="${item.code}">${item.codeValue}</option>
 				</c:forEach>
-            </select>*</td>
-        </tr>
-        <tr>
-        	<td>会社契約期間</td>
-        	<td>
+            </select>*
+        </div>
+        <div>
+        	会社契約期間
         	<input type="text" name="empBaseBean.companyStartDate" maxLength=8/>～
-        	</td>
-        	<td>
         	<input type="text" name="empBaseBean.companyEndDate" maxLength=8/>
-        	</td>
-        </tr>
+        </div>
 
-        <tr>
-        	<td>現場請求先</td>
-        	<td>
+        <div>
+        	現場請求先
         	<input type="text" name="empBaseBean.officeName" maxLength=200/>
-        	</td>
-        	<td>現場アドレス</td>
-        	<td>
+        	現場アドレス
         	<input type="text" name="empBaseBean.officeAddress" maxLength=200/>
-        	</td>
-        </tr>
-        <tr>
-        	<td>現場契約期間</td>
-        	<td>
+        </div>
+        <div>
+        	現場契約期間
         	<input type="text" name="empBaseBean.officeStartDate" maxLength=8/>～
-        	</td>
-        	<td>
         	<input type="text" name="empBaseBean.officeEndDate" maxLength=8/>
-        	</td>
-        </tr>
-    </tbody>
-</table>
+        </div>
+
 </fieldset>
 
 <fieldset><legend>技術経験 </legend>
-<table style="padding-left: 10px; width: 100%" border=0 cellSpacing=0 cellPadding=0 id="tbl_tech">
-    <tbody>
-        <tr>
-            <td style="width: 25%">
+	<div id="divTech">
+            <div style="width: 25%;float:left" >
             	DOS<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.dos" checked="checked" value="0"/>無
@@ -364,8 +313,8 @@ $(function() {
             			<input type="radio" name="empTechBean.dos" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">
+            </div>
+            <div style="width: 25%;float:left">
             	Windows系<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.windows" checked="checked" value="0"/>無
@@ -380,8 +329,8 @@ $(function() {
             			<input type="radio" name="empTechBean.windows" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">Android
+            </div>
+            <div style="width: 25%;float:left">Android
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.android" checked="checked" value="0"/>無
@@ -396,8 +345,8 @@ $(function() {
             			<input type="radio" name="empTechBean.android" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">WinCE
+            </div>
+            <div style="width: 25%;float:left">WinCE
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.wince" checked="checked" value="0"/>無
@@ -412,10 +361,9 @@ $(function() {
             			<input type="radio" name="empTechBean.wince" value="3"/>◎
             		</label>
             	</div>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 25%">Symbian
+            </div>
+
+            <div style="width: 25%;float:left">Symbian
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.symbian" checked="checked" value="0"/>無
@@ -430,8 +378,8 @@ $(function() {
             			<input type="radio" name="empTechBean.symbian" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">Brew
+            </div>
+            <div style="width: 25%;float:left">Brew
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.brew" checked="checked" value="0"/>無
@@ -446,8 +394,8 @@ $(function() {
             			<input type="radio" name="empTechBean.brew" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">Unix
+            </div>
+            <div style="width: 25%;float:left">Unix
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.unix" checked="checked" value="0"/>無
@@ -462,8 +410,8 @@ $(function() {
             			<input type="radio" name="empTechBean.unix" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">Linux
+            </div>
+            <div style="width: 25%;float:left">Linux
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.linux" checked="checked" value="0"/>無
@@ -478,10 +426,9 @@ $(function() {
             			<input type="radio" name="empTechBean.linux" value="3"/>◎
             		</label>
             	</div>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 25%">Mac
+            </div>
+
+            <div style="width: 25%;float:left">Mac
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.mac" checked="checked" value="0"/>無
@@ -496,8 +443,8 @@ $(function() {
             			<input type="radio" name="empTechBean.mac" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">ﾘｱﾙﾀｲﾑOS TRON
+            </div>
+            <div style="width: 25%;float:left">ﾘｱﾙﾀｲﾑ<br>OS TRON
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.osTron" checked="checked" value="0"/>無
@@ -512,8 +459,8 @@ $(function() {
             			<input type="radio" name="empTechBean.osTron" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">Cygwin
+            </div>
+            <div style="width: 25%;float:left">Cygwin
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.cygwin" checked="checked" value="0"/>無
@@ -528,8 +475,8 @@ $(function() {
             			<input type="radio" name="empTechBean.cygwin" value="3"/>◎
             		</label>
             	</div>
-            </td>
-            <td style="width: 25%">Netware
+            </div>
+            <div style="width: 25%;float:left">Netware
             	<div class="btn-group" data-toggle="buttons">
             		<label class="btn btn-primary">
             			<input type="radio" name="empTechBean.netware" checked="checked" value="0"/>無
@@ -544,13 +491,9 @@ $(function() {
             			<input type="radio" name="empTechBean.netware" value="3"/>◎
             		</label>
             	</div>
-            </td>
-        </tr>
+            </div>
 
-
-
-    </tbody>
-</table>
+	</div>
 </fieldset>
 </div>
 </div>

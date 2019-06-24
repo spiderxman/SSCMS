@@ -2,6 +2,8 @@ package com.masago.controllor;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,16 +100,62 @@ public class EmpInfoController {
         return "redirect:/EmpBaseAddInit";
     }
     
-    /**
-     * ユーザ存在チェック
-     * @param userId
-     * @return
-     */
-    @RequestMapping(value ="/CheckUserIdExists", method = RequestMethod.POST)
+    @RequestMapping("/EmpInfoSearchInit")
+    public ModelAndView init(HttpSession session){
+    	ModelAndView mv = new ModelAndView();
+    	//仕事状態取得
+    	List<MstCodeBean> workingStatusCodeList = mstCodeService.getMstCode("WorkingStatus");
+    	mv.addObject("workingStatusCodeList", workingStatusCodeList);
+        mv.setViewName("Emp/EmpInfoSearch");
+        return mv; //返回视图
+    }
+    
+    @RequestMapping(value="/EmpInfoSearchByAjax",method= {RequestMethod.POST})  //初期表示
     @ResponseBody
-    public JSONArray checkUserIdExists(String userId){
-    	List<EmpBaseBean> userInfoList = empInfoService.getEmpInfo(userId, "", "", "");
-    	JSONArray jsonArray = JSONArray.fromObject(userInfoList);
+    public JSONArray userSearchByAjax(HttpServletRequest request, HttpServletResponse response){
+    	String empId = request.getParameter("empId");
+    	String empName = request.getParameter("empName");
+    	String workingStatus = request.getParameter("workingStatus");
+    	String delFlag = request.getParameter("delFlag");
+    	
+    	//删除checkbox选中
+    	if("on".equals(delFlag)) {
+    		delFlag = null;
+    	}else {
+    		delFlag = "0";
+    	}
+    	List<EmpBaseBean> empInfoList = empInfoService.getEmpInfo(empId, empName, workingStatus, delFlag);
+    	JSONArray jsonArray = JSONArray.fromObject(empInfoList);
         return jsonArray; //返回视图
     }
+  /**
+  * ユーザ詳細初期表示
+  * @param userId
+  * @return
+  */
+    @RequestMapping("/EmpInfoDetailInit")
+    public ModelAndView empDetailInit(HttpSession session, String empId){
+    	ModelAndView mv = new ModelAndView();
+
+    	List<MstCodeBean> authorityCodeList = mstCodeService.getMstCode("Authority");
+    	
+    	List<EmpBaseBean> empInfoList = empInfoService.getEmpInfo(empId, "", "", "");
+    	mv.addObject("empInfo", empInfoList.get(0));
+    	mv.addObject("authorityCodeList", authorityCodeList);
+        mv.setViewName("Emp/EmpDetail");
+        return mv; //返回视图
+    }
+    
+//    /**
+//     * ユーザ存在チェック
+//     * @param userId
+//     * @return
+//     */
+//    @RequestMapping(value ="/CheckUserIdExists", method = RequestMethod.POST)
+//    @ResponseBody
+//    public JSONArray checkUserIdExists(String userId){
+//    	List<EmpBaseBean> userInfoList = empInfoService.getEmpInfo(userId, "", "", "");
+//    	JSONArray jsonArray = JSONArray.fromObject(userInfoList);
+//        return jsonArray; //返回视图
+//    }
 }

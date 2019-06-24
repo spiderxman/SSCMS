@@ -29,8 +29,8 @@ public class EmpInfoServiceImpl implements EmpInfoService{    //表示service层
      * 
      */
     @Transactional(readOnly=true)
-    public List<EmpBaseBean> getEmpInfo(String empId, String userName, String userRoot, String delFlag) {
-        return empInfomapper.selectEmpInfo(empId, userName, userRoot, delFlag);
+    public List<EmpBaseBean> getEmpInfo(String empId, String empName, String workingStatus, String delFlag) {
+        return empInfomapper.selectEmpInfo(empId, empName, workingStatus, delFlag);
     }
     @Transactional(readOnly=true)
     public String getMaxEmpId() {

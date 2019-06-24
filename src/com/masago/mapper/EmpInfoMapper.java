@@ -13,8 +13,8 @@ import com.masago.bean.EmpTechBean;
 public interface EmpInfoMapper {
 	List<EmpBaseBean> selectEmpInfo(
 			@Param("empId") String empId
-			,@Param("userName") String userName
-			,@Param("authority") String authority
+			,@Param("empName") String empName
+			,@Param("workingStatus") String workingStatus
 			,@Param("delFlag") String delFlag
 			);
 	
