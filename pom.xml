@@ -8,7 +8,7 @@
   <!--此处统一配置版本信息-->
   <properties>
     <!-- spring版本 -->
-    <springVersion>5.0.0.RELEASE</springVersion>
+    <springVersion>5.3.18</springVersion>
     <!-- mybatis版本 -->
     <mybatis.version>3.4.6</mybatis.version>
     <!--<mysqlVersion>6.0.3</mysqlVersion>-->
